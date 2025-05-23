@@ -8,8 +8,14 @@
     "baseUrl": "src",
     "paths": {
       "@/*": ["*"],
+      "@assets/*": ["assets/*"],
       "@components/*": ["components/*"],
-      "@styles/*": ["styles/*"],
+      "@pages/*": ["pages/*"],
+      "@sections/*": ["sections/*"],
+      "@ui/*": ["ui/*"],
+      "@utils/*": ["utils/*"],
+      "@routing/*": ["routing/*"],
+      "@theme/*": ["theme/*"]
     }
   }
 }
