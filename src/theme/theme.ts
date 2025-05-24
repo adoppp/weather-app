@@ -4,6 +4,7 @@ import type { ColorMode } from '@/types/global.types';
 import '@fontsource/montserrat';
 
 
+
 export const theme = (mode: ColorMode) => {
     return createTheme({
         palette: {
@@ -20,8 +21,8 @@ export const theme = (mode: ColorMode) => {
             MuiCssBaseline: {
                 styleOverrides: {
                     body: {
-                        backgroundColor: colors.bg_default,
-                        color: colors.text_default, 
+                        backgroundColor: mode === "dark" ? colors.bg_default : colors.white,
+                        color:  mode === "dark" ? colors.white : colors.obsidian, 
                         margin: 0,
                         padding: 0,
                         fontFamily: '"Montserrat", "Roboto", "Arial", sans-serif',
