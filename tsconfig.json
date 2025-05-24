@@ -15,7 +15,8 @@
       "@ui/*": ["ui/*"],
       "@utils/*": ["utils/*"],
       "@routing/*": ["routing/*"],
-      "@theme/*": ["theme/*"]
+      "@theme/*": ["theme/*"],
+      "@storage/*": ["storage/*"]
     }
   }
 }
