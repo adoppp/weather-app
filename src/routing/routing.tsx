@@ -8,6 +8,7 @@ export const router = createBrowserRouter([
     {
         path: "/",
         element: <Rootlayout />,
+        // errorElement: <ErrorPage />,
         children: [
             { index: true, element: <Navigate to="weather" replace /> },
             { path: "weather", element: <Weather /> },
@@ -15,5 +16,5 @@ export const router = createBrowserRouter([
             { path: "settings", element: <Settings /> },
             // { path: "*", element: <NotFound /> },
         ],
-}
-])
+    }
+]);

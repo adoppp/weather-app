@@ -1,0 +1,51 @@
+@use "@/styles/colors" as colors;
+@use "@/styles/variables" as variables;
+@use "@/styles/typography" as typography;
+
+.container {
+    display: flex;
+    padding: 16px;
+    height: 100vh;
+}
+
+.sidebar {
+    background-color: var(--secondary-bg);
+    padding-top: 32px;
+    border-radius: variables.$border-radius;
+    width: 100%;
+    max-width: 140px;
+}
+
+.navigation {
+    display: flex;
+    flex-direction: column;
+
+    & a {
+        color: colors.$gray;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 85px;
+        margin-bottom: 24px;
+        transition: variables.$transition;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        &:global(.active) {
+            color: var(--text-color);
+            border-left: solid var(--text-color) 2px;
+        }
+
+        & svg {
+            margin-bottom: 4px;
+            stroke: colors.$gray;
+            transition: variables.$transition;
+        }
+
+        &:global(.active) svg {
+            stroke: var(--text-color);
+        }
+    }
+}
