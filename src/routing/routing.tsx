@@ -2,7 +2,7 @@ import { Rootlayout } from "@/layouts/RootLayout/RootLayout";
 import { Cities } from "@/pages/Cities/Cities";
 import { Settings } from "@/pages/Settings/Settings";
 import { Weather } from "@/pages/Weather/Weather";
-import { createBrowserRouter, Navigate } from "react-router";
+import { createBrowserRouter, Navigate } from "react-router-dom";
 
 export const router = createBrowserRouter([
     {

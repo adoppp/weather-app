@@ -1,4 +1,4 @@
-import { NavLink } from "react-router";
+import { NavLink } from "react-router-dom";
 import classNames from "classnames/bind";
 
 import styles from "@/sections/SideBar/SideBar.module.scss";
