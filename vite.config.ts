@@ -4,6 +4,7 @@ import svgr from "vite-plugin-svgr";
 import path from 'path';
 
 export default defineConfig({
+  base: '/emotion_weather-app/',
   plugins: [react(), svgr()],
   resolve: {
     alias: {
