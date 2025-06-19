@@ -1,4 +1,4 @@
-import "@/App.module.scss";
+import "@/App.scss";
 import { RouterProvider } from "react-router";
 import { router } from "@/routing/routing";
 
