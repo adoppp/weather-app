@@ -1,0 +1,24 @@
+@use "@/styles/colors" as colors;
+@use "@/styles/variables" as variables;
+@use "@/styles/typography" as typography;
+
+.container {
+    width: 340px;
+}
+
+.title {
+    @include typography.heading();
+
+    margin-bottom: 12px;
+}
+
+.description {
+    @include typography.text();
+
+    color: colors.$gray;
+    margin-bottom: 8px;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
