@@ -6,7 +6,7 @@ import { createBrowserRouter, Navigate } from "react-router";
 
 export const router = createBrowserRouter([
     {
-        path: "/",
+        path: "/emotion_weather-app/",
         element: <Rootlayout />,
         // errorElement: <ErrorPage />,
         children: [
