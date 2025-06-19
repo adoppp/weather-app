@@ -1,0 +1,11 @@
+.container {
+    display: flex;
+    gap: 20px;
+    padding: 0 16px;
+}
+
+.secondContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}

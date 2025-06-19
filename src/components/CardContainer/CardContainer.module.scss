@@ -3,7 +3,8 @@
 @use "@/styles/typography" as typography;
 
 .container {
-    display: flex;
+    background-color: var(--card--bg);
     padding: 16px;
-    height: 100vh;
+    border-radius: 15px;
+    height: fit-content;
 }

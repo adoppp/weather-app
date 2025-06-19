@@ -1,0 +1,19 @@
+@mixin heading() {
+    font-size: 42px;
+    font-weight: 600;
+}
+
+@mixin headingBig() {
+    font-size: 54px;
+    font-weight: 600;
+}
+
+@mixin text() {
+    font-size: 19px;
+    font-weight: 500;
+}
+
+@mixin textBig() {
+    font-size: 26px;
+    font-weight: 500;
+}
