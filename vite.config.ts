@@ -20,4 +20,12 @@ export default defineConfig({
       '@storage': path.resolve(__dirname, './src/storage'),
     },
   },
+  build: {
+    rollupOptions: {
+      input: {
+        main: path.resolve(__dirname, 'index.html'),
+        notFound: path.resolve(__dirname, 'index.html'), // 👈 creates 404.html
+      },
+    },
+  },
 });
