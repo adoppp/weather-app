@@ -16,7 +16,7 @@ export const WeatherData: FC = () => {
     const dispatch = useDispatch<AppDispatch>();
 
     useEffect(() => {
-        dispatch(getCurrentWeather({ city: "Bern" }))
+        dispatch(getCurrentWeather({ city: "Odessa" }))
     }, []);
 
     return (

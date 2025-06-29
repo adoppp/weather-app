@@ -21,3 +21,14 @@ export const getCurrentWeather = createAsyncThunk(
         }
     }
 );
+
+// export cosnt getforecast = createAsyncThunk(
+//     name: "currentWeather/getforecast",
+//     async (__, thunkAPI) => {
+//         try {
+            
+//         } catch (error) {
+            
+//         }
+//     }
+// )
