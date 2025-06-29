@@ -22,7 +22,7 @@ import { weatherReducer } from "@/store/reducers/weatherSlice";
 
 export const store = configureStore({
     reducer: {
-        currentWeather: weatherReducer,
+        weatherData: weatherReducer,
     },
     // middleware: (getDefaultMiddleware) =>
     //     getDefaultMiddleware({

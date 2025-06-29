@@ -8,8 +8,10 @@ interface GetCurrentWeatherProps {
 
 }
 
+const REJECTED = (e: any, thunkAPI: any) => { return thunkAPI.rejectWithValue(e.response?.data || "Unknown error") };
+
 export const getCurrentWeather = createAsyncThunk(
-    "currentWeather/getCurrentWeather",
+    "weather/getCurrentWeather",
     async ({ city }: GetCurrentWeatherProps, thunkAPI) => {
         try {
             const response = await instance.get(
@@ -17,18 +19,20 @@ export const getCurrentWeather = createAsyncThunk(
             );
             return response.data;
         } catch (error: any) {
-            return thunkAPI.rejectWithValue(error.response?.data || "Unknown error");
+            REJECTED(error, thunkAPI);
         }
     }
 );
 
-// export cosnt getforecast = createAsyncThunk(
-//     name: "currentWeather/getforecast",
-//     async (__, thunkAPI) => {
-//         try {
+export const getforecast = createAsyncThunk(
+    "weather/getforecast",
+    async ({ city }: GetCurrentWeatherProps, thunkAPI: any) => {
+        try {
+            const response = await instance.get(`forecast?q=${city}&units=metric&lang=en&appid=${API_KEY}`)
             
-//         } catch (error) {
-            
-//         }
-//     }
-// )
+            return response.data;
+        } catch (error) {
+            REJECTED(error, thunkAPI);
+        }
+    }
+);

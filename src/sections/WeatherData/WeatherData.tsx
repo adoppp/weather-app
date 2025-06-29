@@ -4,11 +4,12 @@ import classNames from "classnames/bind";
 
 import styles from "@/sections/WeatherData/WeatherData.module.scss";
 
-import { getCurrentWeather } from "@/store/operations/weatherThunk";
+import { getCurrentWeather, getforecast } from "@/store/operations/weatherThunk";
 import type { AppDispatch } from "@/store/store";
 import { CurrentWeatherCard } from "@/components/CurrentWeatherCard/CurrentWeatherCard";
 import { WindCard } from "@/components/WindCard/WindCard";
 import { TempCard } from "@/components/TempCard/TempCard";
+import { ForecastCard } from "@/components/ForecastCard/ForecastCard";
 
 const cn = classNames.bind(styles);
 
@@ -17,6 +18,7 @@ export const WeatherData: FC = () => {
 
     useEffect(() => {
         dispatch(getCurrentWeather({ city: "Odessa" }))
+        dispatch(getforecast({city: "odessa" }))
     }, []);
 
     return (
@@ -26,6 +28,7 @@ export const WeatherData: FC = () => {
                 <TempCard />
                 <WindCard />
             </div>
+            <ForecastCard />
         </div>
     )
 };

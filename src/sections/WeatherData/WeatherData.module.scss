@@ -9,3 +9,10 @@
     flex-direction: column;
     justify-content: space-between;
 }
+
+@media screen and (max-width: 1440px) {
+    .container {
+        flex-wrap: wrap;
+        max-width: 1248px;
+    }
+}
