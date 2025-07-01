@@ -4,6 +4,17 @@
 
 .container {
     background-color: var(--card--bg);
-    padding: 16px;
-    border-radius: 15px;
+    padding: 24px;
+    border-radius: variables.$border-radius;
+    margin-bottom: 24px;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    & h2 {
+        @include typography.headingCard();
+
+        margin-bottom: 16px;
+    }
 }

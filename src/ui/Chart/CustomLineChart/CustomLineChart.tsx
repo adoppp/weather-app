@@ -8,14 +8,14 @@ interface CustomLineChartProps {
 };
 
 export const CustomLineChart: FC<CustomLineChartProps> = ({ data }) => {
-    const { CustomLabel } = useCustomLineChart();
+    const { CustomLabel, CustomTooltip } = useCustomLineChart();
     
     return (
-        <ResponsiveContainer width="100%" height={300}>
+        <ResponsiveContainer width="100%" height={380}>
             <LineChart data={data}>
                 <XAxis dataKey="time" />
                 <YAxis />
-                <Tooltip />
+                <Tooltip content={<CustomTooltip />} />
                 <Legend />
                 <Line dataKey="temp" stroke="#1f77b4" fill="#1f77b4" label={<CustomLabel />} />
             </LineChart>
