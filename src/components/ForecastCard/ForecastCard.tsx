@@ -9,7 +9,6 @@ export const ForecastCard: FC = () => {
     
     return (
         <CardContainer>
-            <div>
                 <h2>Forecast</h2>
                 {formatedData && (
                     <Chart
@@ -17,7 +16,6 @@ export const ForecastCard: FC = () => {
                         data={formatedData}
                     />
                 )}
-            </div>
         </CardContainer>
     );
 };

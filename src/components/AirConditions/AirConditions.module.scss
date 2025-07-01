@@ -5,9 +5,17 @@
 .container {
     display: flex;
     justify-content: space-between;
+    max-width: 80%;
 }
 
 .card {
+    display: flex;
+    gap: 12px;
+
+    & div {
+        margin-top: 4px;
+    }
+
     & h4 {
         @include typography.text();
 
@@ -18,4 +26,14 @@
     & p {
         @include typography.textBig();
     }
+}
+
+.svg_wind{
+    stroke: colors.$gray
+}
+
+.svg_temp {
+    fill: colors.$gray;
+    width: 24px;
+    height: 24px;
 }
