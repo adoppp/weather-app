@@ -13,15 +13,15 @@ export const SideBar = () => {
     return (
         <aside className={cn("sidebar")}>
                 <nav className={cn("navigation")}>
-                    <NavLink to="/weather-app/weather">
+                    <NavLink to="/weather">
                         <Cloud />
                         Weather
                     </NavLink>
-                    <NavLink to="/weather-app/cities">
+                    <NavLink to="/cities">
                         <Cities />
                         Cities
                     </NavLink>
-                    <NavLink to="/weather-app/settings">
+                    <NavLink to="/settings">
                         <Settings />
                         Settings
                     </NavLink>
