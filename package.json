@@ -1,5 +1,6 @@
 {
   "name": "emotion_weather-app",
+  "homepage": "https://adoppp.github.io/weather-app",
   "private": true,
   "version": "0.0.0",
   "type": "module",
