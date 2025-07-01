@@ -1,4 +1,4 @@
-import { useEffect, type FC } from "react";
+import { useEffect, useState, type FC, type FormEvent } from "react";
 import { useDispatch } from "react-redux";
 import classNames from "classnames/bind";
 
@@ -9,20 +9,21 @@ import type { AppDispatch } from "@/store/store";
 import { CurrentWeatherCard } from "@/components/CurrentWeatherCard/CurrentWeatherCard";
 import { AirConditions } from "@/components/AirConditions/AirConditions";
 import { ForecastCard } from "@/components/ForecastCard/ForecastCard";
+import { Input } from "@/ui/Input/Input";
+import { useWeatherData } from "./WeatherData.hooks";
 
 const cn = classNames.bind(styles);
 
 export const WeatherData: FC = () => {
-    const dispatch = useDispatch<AppDispatch>();
-
-    useEffect(() => {
-        dispatch(getCurrentWeather({ city: "Odessa" }))
-        dispatch(getforecast({city: "odessa" }))
-    }, []);
+    const { inputValue, handleChange, handleSubmit } = useWeatherData();
 
     return (
         <div className={cn("container")} >
             <div className={cn("main_container")}>
+                <form onSubmit={handleSubmit}>
+                    <Input label="Search" value={inputValue} onChange={handleChange} />
+                    <button type="submit">search</button>
+                </form>
                 <CurrentWeatherCard />
                 <ForecastCard />
                 <AirConditions />
