@@ -7,8 +7,7 @@ import styles from "@/sections/WeatherData/WeatherData.module.scss";
 import { getCurrentWeather, getforecast } from "@/store/operations/weatherThunk";
 import type { AppDispatch } from "@/store/store";
 import { CurrentWeatherCard } from "@/components/CurrentWeatherCard/CurrentWeatherCard";
-import { WindCard } from "@/components/WindCard/WindCard";
-import { TempCard } from "@/components/TempCard/TempCard";
+import { AirConditions } from "@/components/AirConditions/AirConditions";
 import { ForecastCard } from "@/components/ForecastCard/ForecastCard";
 
 const cn = classNames.bind(styles);
@@ -23,14 +22,13 @@ export const WeatherData: FC = () => {
 
     return (
         <div className={cn("container")} >
-            <div>
+            <div className={cn("main_container")}>
                 <CurrentWeatherCard />
                 <ForecastCard />
-                <TempCard />
-                <WindCard />
+                <AirConditions />
             </div>
             <div>
-                <WindCard />
+                {/* 7-day forecast */}
             </div>
         </div>
     )

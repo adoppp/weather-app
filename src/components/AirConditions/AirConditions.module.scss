@@ -1,0 +1,21 @@
+@use "@/styles/colors" as colors;
+@use "@/styles/variables" as variables;
+@use "@/styles/typography" as typography;
+
+.container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.card {
+    & h4 {
+        @include typography.text();
+
+        color: colors.$gray;
+        margin-bottom: 8px
+    }
+
+    & p {
+        @include typography.textBig();
+    }
+}

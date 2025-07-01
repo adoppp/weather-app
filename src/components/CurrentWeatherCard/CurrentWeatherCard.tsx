@@ -20,20 +20,13 @@ export const CurrentWeatherCard: FC = () => {
                     <span className={cn("subtitle")} >{currentWeatherData?.weather[0].description}</span>
                 </div>
 
-                <h2 className={cn("title")}>{useTruncNumber(currentWeatherData?.main.temp)}°C</h2>
+                <h2 className={cn("grad")}>{useTruncNumber(currentWeatherData?.main.temp)}°</h2>
             </div>
-
-
-
-
-
-                
-                <img
-                    src={`http://openweathermap.org/img/wn/${currentWeatherData?.weather[0].icon}@2x.png`}
-                    alt={currentWeatherData?.weather[0].description || 'Weather icon'}
-                    className={cn("weather_icon")}
-                />
-                
+            <img
+                src={`http://openweathermap.org/img/wn/${currentWeatherData?.weather[0].icon}@2x.png`}
+                alt={currentWeatherData?.weather[0].description || 'Weather icon'}
+                className={cn("weather_icon")}
+            />
         </div>
     );
 };
