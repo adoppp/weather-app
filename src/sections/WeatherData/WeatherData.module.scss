@@ -1,18 +1,6 @@
 .container {
     display: flex;
+    flex-direction: column;
     gap: 20px;
     padding: 0 16px;
-}
-
-.secondContainer {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-@media screen and (max-width: 1440px) {
-    .container {
-        flex-wrap: wrap;
-        max-width: 1248px;
-    }
 }

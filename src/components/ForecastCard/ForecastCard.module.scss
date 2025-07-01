@@ -1,9 +1,13 @@
-.container {
-    min-width: 520px;
-}
+@use "@/styles/colors" as colors;
+@use "@/styles/variables" as variables;
+@use "@/styles/typography" as typography;
 
-@media screen and (max-width: 1440px) {
-    .container {
-        min-width: 730px;
+.container {
+    
+
+    & h2 {
+        @include typography.heading();
+        margin-bottom: 24px;
     }
 }
+

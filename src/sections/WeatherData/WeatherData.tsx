@@ -24,11 +24,9 @@ export const WeatherData: FC = () => {
     return (
         <div className={cn("container")} >
             <CurrentWeatherCard />
-            <div className={cn("secondContainer")} >
-                <TempCard />
-                <WindCard />
-            </div>
             <ForecastCard />
+            <TempCard />
+            <WindCard />
         </div>
     )
 };
