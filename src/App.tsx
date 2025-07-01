@@ -1,7 +1,15 @@
 import "@/App.scss";
-import { RouterProvider } from "react-router";
-import { router } from "@/routing/routing";
+import { Outlet } from "react-router";
+import { SideBar } from "@/sections/SideBar/SideBar";
 
 export function App() {
-  return <RouterProvider router={router} />
+  return (
+      <div className="container_app">
+          <SideBar />
+
+          <main>
+              <Outlet /> 
+          </main>
+      </div>
+  );
 };

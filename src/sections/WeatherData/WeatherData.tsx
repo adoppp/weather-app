@@ -23,12 +23,15 @@ export const WeatherData: FC = () => {
 
     return (
         <div className={cn("container")} >
-            <CurrentWeatherCard />
-            <div className={cn("secondContainer")} >
+            <div>
+                <CurrentWeatherCard />
+                <ForecastCard />
                 <TempCard />
                 <WindCard />
             </div>
-            <ForecastCard />
+            <div>
+                <WindCard />
+            </div>
         </div>
     )
 };

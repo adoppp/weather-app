@@ -4,13 +4,16 @@
 
 .container {
     display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-items: center;
-    width: 340px;
+    justify-content: space-between;
+    max-width: 100vw;
+    width: 100%;
+}
 
-    & h2.title {
-        margin-bottom: 8px;   
+.information {
+    height: 100%;
+
+    & div {
+        margin-bottom: 100px
     }
 }
 
@@ -19,5 +22,13 @@
 }
 
 .subtitle {
-    @include typography.textBig();
+    @include typography.text();
+
+    color: colors.$gray;
+    text-align: center;
+}
+
+.weather_icon {
+    width: 160px;
+    height: 160px;
 }
