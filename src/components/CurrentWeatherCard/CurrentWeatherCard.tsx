@@ -14,8 +14,13 @@ export const CurrentWeatherCard: FC = () => {
     
     return (
         <div className={cn("container")} >
-            <div>
-                <h1 className={cn("title")} >{currentWeatherData?.name}</h1>
+            <div className={cn("information")} >
+                <div>
+                    <h1 className={cn("title")} >{currentWeatherData?.name}</h1>
+                    <span className={cn("subtitle")} >{currentWeatherData?.weather[0].description}</span>
+                </div>
+
+                <h2 className={cn("title")}>{useTruncNumber(currentWeatherData?.main.temp)}°C</h2>
             </div>
 
 
@@ -26,10 +31,9 @@ export const CurrentWeatherCard: FC = () => {
                 <img
                     src={`http://openweathermap.org/img/wn/${currentWeatherData?.weather[0].icon}@2x.png`}
                     alt={currentWeatherData?.weather[0].description || 'Weather icon'}
-                    style={{ width: 160, height: 160 }}
+                    className={cn("weather_icon")}
                 />
-                <h2 className={cn("title")}>{useTruncNumber(currentWeatherData?.main.temp)}°C</h2>
-                <span className={cn("subtitle")} >{currentWeatherData?.weather[0].description}</span>
+                
         </div>
     );
 };
