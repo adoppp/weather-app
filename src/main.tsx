@@ -5,12 +5,15 @@ import { persistor, store } from '@/store/store';
 import { router } from '@/routing/routing';
 import { RouterProvider } from 'react-router';
 import { PersistGate } from 'redux-persist/integration/react';
+import { CityProvider } from './utils/useGetLocation/useGetLocation';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
       <Provider store={store}>
-        <PersistGate loading={null} persistor={persistor}>
-          <RouterProvider router={router} />
+      <PersistGate loading={null} persistor={persistor}>
+          <CityProvider>
+            <RouterProvider router={router} />
+          </CityProvider>
         </PersistGate>
       </Provider>
   </StrictMode>,
