@@ -24,13 +24,16 @@
         margin-bottom: 24px;
         transition: variables.$transition;
 
+        &:hover {
+            background-color: rgb(31, 119, 180, 0.2);
+        }
+
         &:last-child {
             margin-bottom: 0;
         }
 
         &:global(.active) {
             color: var(--text-color);
-            border-left: solid var(--text-color) 2px;
         }
 
         & svg {
