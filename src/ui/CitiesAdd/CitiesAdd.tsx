@@ -1,31 +1,22 @@
-import { useState, type FC, type FormEvent } from "react";
-import { useDispatch } from "react-redux";
+import { type FC } from "react";
+import classNames from "classnames/bind";
+
+import styles from "@ui/CitiesAdd/CitiesAdd.module.scss";
 
 import { Input } from "@/ui/Input/Input";
-import type { AppDispatch } from "@/store/store";
-import { addCity } from "@/store/reducers/citiesSlice";
+import { Button } from "@/ui/Button/Button";
+import { useCitiesAdd } from "@ui/CitiesAdd/CitiesAdd.hooks";
+
+const cn = classNames.bind(styles);
 
 export const CitiesAdd: FC = () => {
-    const [inputValue, setInputValue] = useState<string>("");
-    const dispatch = useDispatch<AppDispatch>();
-
-    const handleChange = (e: string) => {
-        setInputValue(e);
-    };
-    
-    const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
-        e.preventDefault();
-
-        if (inputValue !== "") {
-            dispatch(addCity(inputValue))
-            setInputValue("");
-        }
-    }
-
+    const { inputValue, handleChange, handleSubmit } = useCitiesAdd();
     return (
-        <form onSubmit={handleSubmit}>
-            <Input label="Add city" value={inputValue} onChange={handleChange} />
-            <button type="submit">+ Add</button>
+        <form onSubmit={handleSubmit} className={cn("form")}>
+            <Input label="Add city" value={inputValue} onChange={handleChange} required />
+            <Button type="default" btnType="submit">
+                +
+            </Button>
         </form>
     )
 }

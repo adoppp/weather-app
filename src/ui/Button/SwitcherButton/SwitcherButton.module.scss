@@ -1,0 +1,48 @@
+@use "@/styles/colors" as colors;
+@use "@/styles/variables" as variables;
+@use "@/styles/typography" as typography;
+
+.button {
+    position: relative;
+    background-color: var(--secondary-bg);
+    border-radius: variables.$border-radius;
+    padding: 16px 32px;
+    transition: variables.$transition;
+    border: 1px solid var(--secondary-bg);
+    width: max-content;
+
+    &:hover {
+        background-color: var(--main-bg);
+    }
+
+    &:active {
+        background-color: colors.$gray;
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-radius: variables.$border-radius;
+        display: block;
+        width: 33px;
+        height: 33px;
+        background-color: var(--text-color);
+        transition: variables.$transition;
+        transform: translateX(0%);
+    }
+
+    &:hover::after {
+        background-color: colors.$gray;
+    }
+
+    &.active::after {
+        transform: translateX(100%);
+        background-color: green;
+    }
+
+    &.active:hover::after {
+        background-color: darkgreen;
+    }
+}

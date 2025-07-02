@@ -1,0 +1,9 @@
+@use "@/styles/colors" as colors;
+@use "@/styles/variables" as variables;
+@use "@/styles/typography" as typography;
+
+.form {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 24px;
+}
