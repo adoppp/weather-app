@@ -2,7 +2,6 @@ import type { FC } from "react";
 import { Legend, Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
 
 import { useCustomLineChart } from "@ui/Chart/CustomLineChart/CustomLineChart.hooks";
-import { useTheme } from "@/utils/useTheme/useTheme";
 
 interface CustomLineChartProps {
     data: { time: string; temp: number | string }[];
