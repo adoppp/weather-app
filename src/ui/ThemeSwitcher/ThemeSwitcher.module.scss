@@ -1,0 +1,14 @@
+@use "@/styles/colors" as colors;
+@use "@/styles/variables" as variables;
+@use "@/styles/typography" as typography;
+
+.theme {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    
+    & p {
+        @include typography.text();
+    }
+}
