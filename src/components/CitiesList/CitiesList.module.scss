@@ -1,0 +1,43 @@
+@use "@/styles/colors" as colors;
+@use "@/styles/variables" as variables;
+@use "@/styles/typography" as typography;
+
+.cities_list {
+    @include typography.text();
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+
+    & li {
+        background-color: var(--card--bg);
+        border-radius: variables.$border-radius;
+        max-width: 240px;
+        width: 100%;
+        padding: 16px;
+        transition: variables.$transition;
+        border: 1px solid var(--card--bg);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+
+        &:hover {
+            background-color: var(--main-bg);
+            border: 1px solid var(--card--bg);
+        }
+
+        & button svg {
+            stroke: colors.$gray;
+            transition: variables.$transition;
+
+            &:hover {
+                stroke: darkred;
+            }
+
+            &:active {
+                stroke: firebrick;
+            }
+        }
+    }
+}

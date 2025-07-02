@@ -1,0 +1,18 @@
+@use "@/styles/colors" as colors;
+@use "@/styles/variables" as variables;
+@use "@/styles/typography" as typography;
+
+.input {
+    background-color: var(--secondary-bg);
+    color: var(--text-color);
+    width: 100%;
+    padding: 20px;
+    border: 0px;
+    border-radius: variables.$border-radius;
+    transition: variables.$transition;
+
+    &:focus {
+        outline: none;
+        padding-left: 12px;
+    }
+}
