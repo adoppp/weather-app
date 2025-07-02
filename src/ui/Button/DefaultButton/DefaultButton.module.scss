@@ -12,10 +12,11 @@
     width: max-content;
 
     &:hover {
-        background-color: var(--main-bg);
+        background-color: var(--heading-text);
     }
 
     &:active {
-        background-color: colors.$gray;
+        background-color: var(--text-color);
+        color: var(--main-bg);
     }
 }

@@ -1,6 +1,8 @@
 import type { FC } from "react";
 import type { LabelProps } from "recharts";
 
+import { useTheme } from "@/utils/useTheme/useTheme";
+
 interface PayloadEntry {
     name: string;
     value: string | number;
@@ -14,6 +16,8 @@ interface CustomTooltipProps {
 };
 
 export const useCustomLineChart = () => {
+    const { theme } = useTheme();
+
     const CustomLabel: FC = ({ x, y, value }: LabelProps) => {
         //if i want to customize y axis
         const yCoord =
@@ -31,12 +35,9 @@ export const useCustomLineChart = () => {
                 : 0;
     
         return (
-            <g>
-                <rect x={xCoord - 12} y={yCoord + 18} width={24} height={20} fill="#0B131E" rx={4} />
-                <text x={xCoord} y={yCoord + 32} fill="#F9F9F9" fontSize={14} textAnchor="middle">
+                <text x={xCoord} y={yCoord + 32} fill={`${theme === "light" ? "#7d481b" : "#1f77b4"}`} fontSize={16} textAnchor="middle">
                     {value}
                 </text>
-            </g>
         )
     };
 
@@ -57,5 +58,5 @@ export const useCustomLineChart = () => {
         return null;
     };
 
-    return { CustomLabel, CustomTooltip };
+    return { CustomLabel, CustomTooltip, theme };
 };

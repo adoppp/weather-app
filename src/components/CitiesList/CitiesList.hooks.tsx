@@ -12,7 +12,6 @@ export const useCitiesList = () => {
     const dispatch = useDispatch<AppDispatch>();
 
     const handleClick = (e: React.MouseEvent, city: string) => {
-        e.stopPropagation(); 
         dispatch(deleteCity(city));
     };
 
@@ -24,7 +23,7 @@ export const useCitiesList = () => {
         return (
             <li key={index} onClick={() => goToWeather(item)}>
                 {item}
-                <button type="button" onClick={(e) => handleClick(e, item)}>
+                <button type="button" onMouseDown={(e) => e.stopPropagation()} onClick={(e) => handleClick(e, item)}>
                     <Trash />
                 </button>
             </li>

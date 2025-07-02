@@ -33,7 +33,7 @@
         }
 
         &:global(.active) {
-            color: var(--text-color);
+            color: var(--nav-text);
         }
 
         & svg {
@@ -43,7 +43,7 @@
         }
 
         &:global(.active) svg {
-            stroke: var(--text-color);
+            stroke: var(--nav-text);
         }
     }
 }
