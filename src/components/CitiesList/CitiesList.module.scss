@@ -1,0 +1,19 @@
+@use "@/styles/colors" as colors;
+@use "@/styles/variables" as variables;
+@use "@/styles/typography" as typography;
+
+.cities_list {
+    @include typography.text();
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+
+    & li {
+        background-color: var(--card--bg);
+        border-radius: variables.$border-radius;
+        max-width: 240px;
+        width: 100%;
+        padding: 16px;
+    }
+}

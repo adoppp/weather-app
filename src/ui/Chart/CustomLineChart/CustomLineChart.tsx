@@ -11,7 +11,7 @@ export const CustomLineChart: FC<CustomLineChartProps> = ({ data }) => {
     const { CustomLabel, CustomTooltip } = useCustomLineChart();
     
     return (
-        <ResponsiveContainer width="100%" height={380}>
+        <ResponsiveContainer width="100%" height={300}>
             <LineChart data={data}>
                 <XAxis dataKey="time" />
                 <YAxis />
