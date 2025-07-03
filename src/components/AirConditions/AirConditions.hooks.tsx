@@ -17,7 +17,7 @@ const cn = classNames.bind(styles);
 export const TempIcon: FC = () => {
     const currentWeatherData = useSelector(weatherSelector);
     
-    const temp = useTruncNumber(currentWeatherData?.main.feels_like));
+    const temp = useTruncNumber(currentWeatherData?.main.feels_like);
 
     const numberTemp =
         typeof temp === 'number'

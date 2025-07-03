@@ -21,7 +21,7 @@ export const CurrentWeatherCard: FC = () => {
                 <h2 className={cn("grad")}>{temp}°</h2>
             </div>
             <img
-                src={`http://openweathermap.org/img/wn/${iconUrl}@2x.png`}
+                src={iconUrl}
                 alt={description || 'Weather icon'}
                 className={cn("weather_icon")}
             />

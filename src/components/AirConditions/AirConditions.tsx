@@ -23,14 +23,14 @@ export const AirConditions: FC = () => {
                     <TempIcon />
                     <div>
                         <h4>Feels like</h4>
-                        <p>{useTruncNumber(currentWeatherData?.current.feels_like)}°</p>
+                        <p>{useTruncNumber(currentWeatherData?.main.feels_like)}°</p>
                     </div>
                 </div>
                 <div className={cn("card")}>
                     <Wind className={cn("svg_wind")} />
                     <div>
                         <h4>Wind</h4>
-                        <p>{currentWeatherData?.current.wind_speed} m/s</p>
+                        <p>{currentWeatherData?.wind.speed} m/s</p>
                     </div>
                 </div>
             </div>
