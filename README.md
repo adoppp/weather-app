@@ -1,4 +1,5 @@
 -lng
 -loader +++
+-map(api)
 -error
 -popup delete
