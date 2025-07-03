@@ -16,7 +16,7 @@
       "@utils/*": ["utils/*"],
       "@routing/*": ["routing/*"],
       "@theme/*": ["theme/*"],
-      "@storage/*": ["storage/*"]
+      "@store/*": ["store/*"]
     }
   },
 }
