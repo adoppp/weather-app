@@ -28,7 +28,7 @@ export const getCurrentWeather = createAsyncThunk(
     }
 );
 
-export const getforecast = createAsyncThunk(
+export const getForecast = createAsyncThunk(
     "weather/getforecast",
     async ({ city, lng = "en", cords }: GetWeatherProps, thunkAPI: any) => {
         try {

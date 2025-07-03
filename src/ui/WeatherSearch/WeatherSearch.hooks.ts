@@ -1,7 +1,7 @@
 import { useState, type FormEvent } from "react";
 import { useDispatch } from "react-redux";
 import type { AppDispatch } from "@/store/store";
-import { getCurrentWeather, getforecast } from "@/store/operations/weatherThunk";
+import { getCurrentWeather, getForecast } from "@/store/operations/weatherThunk";
 
 export const useWeatherSearch = () => {
     const [inputValue, setInputValue] = useState<string>("");
@@ -16,7 +16,7 @@ export const useWeatherSearch = () => {
 
         if (inputValue !== "") {
             dispatch(getCurrentWeather({ city: inputValue, lng: "ru" }));
-            dispatch(getforecast({ city: inputValue, lng: "ru" }));
+            dispatch(getForecast({ city: inputValue, lng: "ru" }));
             setInputValue("");
         };
     };

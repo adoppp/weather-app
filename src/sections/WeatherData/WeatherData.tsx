@@ -8,23 +8,30 @@ import { AirConditions } from "@/components/AirConditions/AirConditions";
 import { ForecastCard } from "@/components/ForecastCard/ForecastCard";
 import { useWeatherData } from "./WeatherData.hooks";
 import { WeatherSearch } from "@/ui/WeatherSearch/WeatherSearch";
+import { Loader } from "@/components/Loader/Loader";
 
 const cn = classNames.bind(styles);
 
 export const WeatherData: FC = () => {
-    const { } = useWeatherData();
+    const { isLoading } = useWeatherData();
 
     return (
-        <div className={cn("container")} >
-            <div className={cn("main_container")}>
-                <WeatherSearch />
-                <CurrentWeatherCard />
-                <ForecastCard />
-                <AirConditions />
-            </div>
-            <div>
-                {/* 7-day forecast */}
-            </div>
-        </div>
+        <>
+            {isLoading ?
+                <Loader />
+                :
+                <div className={cn("container")} >
+                        <div className={cn("main_container")}>
+                            <WeatherSearch />
+                            <CurrentWeatherCard />
+                            <ForecastCard />
+                            <AirConditions />
+                        </div>
+                        <div>
+                            {/* 7-day forecast */}
+                        </div>
+                </div>
+                }
+        </>
     )
 };
