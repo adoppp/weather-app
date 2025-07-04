@@ -1,6 +1,6 @@
--lng
--loader +++
--map(api)
--error
--popup delete +++
--notifications
+- lng
+- loader +++
+- map(api)
+- error
+- popup delete +++
+- notifications +++

@@ -16,6 +16,7 @@ const cn = classNames.bind(styles);
 
 export const useCitiesList = () => {
     const [isOpen, setIsOpen] = useState<boolean>(false);
+    const [isNotify, setIsNotify] = useState<boolean>(false);
     const [city, setCity] = useState<string>("");
     const navigate = useNavigate();
     const cities = useSelector(citiesSelector);
@@ -25,6 +26,7 @@ export const useCitiesList = () => {
         dispatch(deleteCity(city));
         setCity("");
         setIsOpen(false)
+        setIsNotify(true)
     };
 
     const handleOpenModal = (city: string) => {
@@ -54,15 +56,16 @@ export const useCitiesList = () => {
         )
     });
 
-    const modal = isOpen ?
-        <ModalContainer setIsOpen={setIsOpen}>
+    const modal = isOpen &&
+        <ModalContainer type="modal" setIsOpen={setIsOpen}>
             <div className={cn("popup")}>
                 <p>Delete <strong>"{city}"</strong>?</p>
                     <Button type="default"onClick={handleClick} >Delete</Button>
                     <Button type="default" className={cn("negative")} onClick={handleCloseModal}>Cancel</Button>
             </div>
-        </ModalContainer>
-        : null;
+        </ModalContainer>;
+    
+    const notify = isNotify && <ModalContainer type="notification" children="City deleted" setIsOpen={setIsNotify} />;
 
-    return { listItem, modal }
+    return { listItem, modal, notify };
 };

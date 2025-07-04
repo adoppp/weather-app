@@ -1,10 +1,17 @@
-import type { FC } from "react";
+import { type FC } from "react";
+import classNames from "classnames/bind";
+
+import styles from "@pages/Settings/Settings.module.scss";
 
 import { ThemeSwitcher } from "@/ui/ThemeSwitcher/ThemeSwitcher";
 
+const cn = classNames.bind(styles);
+
 export const Settings: FC = () => {
+
     return (
-        <div>             
+        <div>
+            <h1 className={cn("title")}>Settings</h1>
             <ThemeSwitcher />
         </div>
     )

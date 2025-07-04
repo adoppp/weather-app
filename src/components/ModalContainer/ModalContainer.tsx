@@ -1,35 +1,19 @@
 import type { FC, ReactNode } from "react";
 import { createPortal } from "react-dom";
-import classNames from "classnames/bind";
 
-import styles from "@components/ModalContainer/ModalContainer.module.scss";
-
-import CloseIcon from "@assets/svg/close.svg?react";
-import { Button } from "@/ui/Button/Button";
+import { useModalContainer } from "@components/ModalContainer/ModalContainer.hooks";
+import type { ModalVariant, NotifyVariant } from "@components/ModalContainer/ModalContainer.types";
 
 interface ModalContainerProps {
-    children: ReactNode,
-    setIsOpen: (isOpen: boolean) => void
+    children?: ReactNode,
+    setIsOpen: (isOpen: boolean) => void,
+    type: ModalVariant,
+    time?: number
+    notifyType?: NotifyVariant,
 };
 
-const cn = classNames.bind(styles);
+export const ModalContainer: FC<ModalContainerProps> = ({ children, setIsOpen, type, time = 5000, notifyType }) => {
+    const { ModalType } = useModalContainer({ setIsOpen, children, time, notifyType });
 
-export const ModalContainer: FC<ModalContainerProps> = ({ children, setIsOpen }) => {
-    const handleClose = () => {
-        setIsOpen(false)
-    };
-
-    return createPortal(
-        <div className={cn("container")}>
-            <div className={cn("content_box")}>
-                <Button type="svg" onClick={handleClose}>
-                    <CloseIcon className={cn("close")} />
-                </Button>
-                <div className={cn("content")}>
-                    {children}
-                </div>
-            </div>
-        </div>,
-        document.getElementById("modal")!
-    );
+    return createPortal(<ModalType type={type} />, document.getElementById("modal")!);
 };

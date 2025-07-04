@@ -1,0 +1,41 @@
+@use "@/styles/colors" as colors;
+@use "@/styles/variables" as variables;
+@use "@/styles/typography" as typography;
+
+.container {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    border-radius: variables.$border-radius;
+    padding: 16px;
+    min-width: 280px;
+
+    & .default {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 8px;
+
+        & h2 {
+            @include typography.text();
+        }
+
+        & .close {
+            stroke: var(--text-color);
+            transition: variables.$transition;
+    
+            &:hover {
+                stroke: colors.$gray;
+            }
+    
+            &:active {
+                stroke: #202B3B;
+            }
+        }
+    }
+
+    & p {
+        font-weight: 400;
+        font-size: 16px;
+    }
+}
