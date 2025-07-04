@@ -16,7 +16,7 @@ const citiesSlice = createSlice({
             const exists = state.data.some(city => city === action.payload);
             
             if (!exists) {
-                state.data.push(action.payload);
+                state.data.push(action.payload.charAt(0).toLocaleUpperCase() + action.payload.slice(1));
             }
         },
         deleteCity(state, action: PayloadAction<string>) {

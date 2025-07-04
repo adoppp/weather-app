@@ -21,6 +21,11 @@
         align-items: center;
         cursor: pointer;
 
+        & p {
+            display: block;
+            width: 100%;
+        }
+
         &:hover {
             background-color: var(--heading-text);
             color: var(--main-bg);
@@ -55,6 +60,42 @@
             &:active {
                 stroke: firebrick;
             }
+        }
+    }
+}
+
+.popup {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    & p {
+        @include typography.text();
+
+        max-width: 280px;
+        text-align: center;
+
+        margin-bottom: 60px;
+
+        & strong {
+            color: var(--svg-active);
+        }
+    }
+
+    .negative {
+        background-color: transparent;
+        color: var(--svg-active);
+        border: none;
+        margin-top: 8px;
+
+        &:hover {
+            background: transparent;
+            color: colors.$gray;
+        }
+
+        &:active {
+            background-color: transparent;
+            color: var(--text-color);
         }
     }
 }

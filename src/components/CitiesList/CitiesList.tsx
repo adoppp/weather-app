@@ -8,11 +8,14 @@ import { useCitiesList } from "@components/CitiesList/CitiesList.hooks";
 const cn = classNames.bind(styles);
 
 export const CitiesList: FC = () => {
-    const { listItem } = useCitiesList();
+    const { listItem, modal } = useCitiesList();
 
     return (
-        <ul className={cn("cities_list")}>
-            {listItem}
-        </ul>
-    )
+        <>
+            <ul className={cn("cities_list")}>
+                {listItem}
+            </ul>
+            {modal}
+        </>
+    );
 };

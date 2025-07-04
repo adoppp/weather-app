@@ -4,7 +4,9 @@
     --card--bg: #fdf3d3;
     --text-color: #7d481b;
     --heading-text: #ee7a47;
-    --nav-text: #ee7a47
+    --btn-hover: #7d481b;
+    --nav-text: #ee7a47;
+    --svg-active: #ee7a47
 }
 
 [data-theme="dark"] {
@@ -13,7 +15,9 @@
     --card--bg: #202B3B;
     --text-color: #F9F9F9;
     --heading-text: #949494;
-    --nav-text: #F9F9F9
+    --btn-hover: #949494;
+    --nav-text: #F9F9F9;
+    --svg-active: rgb(31, 119, 180);
 }
 
 $gray: #949494;
