@@ -15,7 +15,6 @@ export const useWeatherData = () => {
     const dispatch = useDispatch<AppDispatch>();
 
     useEffect(() => {
-        console.log("Effect triggered", { location, routerState: routerLocation.state });
         const cityFromState = routerLocation.state && (routerLocation.state as { city?: string }).city;
 
         if (cityFromState) {

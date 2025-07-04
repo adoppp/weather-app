@@ -8,7 +8,7 @@ import { useCitiesList } from "@components/CitiesList/CitiesList.hooks";
 const cn = classNames.bind(styles);
 
 export const CitiesList: FC = () => {
-    const { listItem, modal } = useCitiesList();
+    const { listItem, modal, notify } = useCitiesList();
 
     return (
         <>
@@ -16,6 +16,7 @@ export const CitiesList: FC = () => {
                 {listItem}
             </ul>
             {modal}
+            {notify}
         </>
     );
 };

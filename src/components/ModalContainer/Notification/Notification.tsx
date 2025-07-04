@@ -18,12 +18,12 @@ interface NotificationProps {
 const cn = classNames.bind(styles);
 
 export const Notification: FC<NotificationProps> = ({ children, handleClose, time, notifyType }) => {
-    const { typeCofig } = useNotification({ time, notifyType, handleClose });
+    const { typeCofnig } = useNotification({ time, notifyType, handleClose });
 
     return (
-        <div className={cn("container")} style={{ background: typeCofig.color }}>
+        <div className={cn("container")} style={{ background: typeCofnig.color }}>
             <div className={cn("default")}>
-                <h2>{typeCofig.title}</h2>
+                <h2>{typeCofnig.title}</h2>
                 <Button type="svg" onClick={handleClose}>
                     <CloseIcon className={cn("close")} />
                 </Button>

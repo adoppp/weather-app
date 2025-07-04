@@ -7,7 +7,7 @@ interface InputProps {
     label?: string,
     value: string,
     onChange: (value: string) => void,
-    required: boolean
+    required?: boolean
 }
 
 const cn = classNames.bind(styles);

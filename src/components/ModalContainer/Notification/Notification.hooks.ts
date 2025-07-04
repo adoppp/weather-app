@@ -15,7 +15,7 @@ const typeMap = {
 };
 
 export const useNotification = ({ time, notifyType, handleClose }: NotificationProps) => {
-    const [typeCofig, setTypeCofig] = useState<{ color: string, title: string }>(typeMap[notifyType])
+    const [typeCofnig, setTypeCofig] = useState<{ color: string, title: string }>(typeMap[notifyType]);
     
         useEffect(() => {
             setTypeCofig(typeMap[notifyType]);
@@ -26,5 +26,5 @@ export const useNotification = ({ time, notifyType, handleClose }: NotificationP
             }
         }, [time, handleClose, notifyType]);
     
-    return { typeCofig };
+    return { typeCofnig };
 }

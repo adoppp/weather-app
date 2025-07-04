@@ -34,4 +34,4 @@ export const useModalContainer = ({ setIsOpen, children, time, notifyType = "suc
     }
 
     return { handleClose, ModalType };
-}
+};
