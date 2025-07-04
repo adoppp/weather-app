@@ -54,15 +54,14 @@ export const useCitiesList = () => {
         )
     });
 
-    const modal = isOpen ?
+    const modal = isOpen &&
         <ModalContainer type="modal" setIsOpen={setIsOpen}>
             <div className={cn("popup")}>
                 <p>Delete <strong>"{city}"</strong>?</p>
                     <Button type="default"onClick={handleClick} >Delete</Button>
                     <Button type="default" className={cn("negative")} onClick={handleCloseModal}>Cancel</Button>
             </div>
-        </ModalContainer>
-        : null;
+        </ModalContainer>;
 
     return { listItem, modal }
 };

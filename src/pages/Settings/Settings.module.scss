@@ -1,0 +1,9 @@
+@use "@/styles/colors" as colors;
+@use "@/styles/variables" as variables;
+@use "@/styles/typography" as typography;
+
+.title {
+    @include typography.heading();
+    
+    margin-bottom: 32px;
+}
