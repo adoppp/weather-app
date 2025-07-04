@@ -1,4 +1,4 @@
-import { useEffect, useState, type FC, type ReactNode } from "react";;
+import { type FC, type ReactNode } from "react";;
 import classNames from "classnames/bind";
 
 import styles from "@components/ModalContainer/Notification/Notification.module.scss";
@@ -6,6 +6,7 @@ import styles from "@components/ModalContainer/Notification/Notification.module.
 import CloseIcon from "@assets/svg/close.svg?react";
 import { Button } from "@/ui/Button/Button";
 import type { NotifyVariant } from "@components/ModalContainer/ModalContainer.types";
+import { useNotification } from "./Notification.hooks";
 
 interface NotificationProps {
     children: ReactNode,
@@ -16,24 +17,8 @@ interface NotificationProps {
 
 const cn = classNames.bind(styles);
 
-const typeMap = {
-    success: { color: "#27fa85b3", title: "Success" },
-    warning: { color: "#fa9f27b3", title: "Warning" },
-    error:   { color: "#fa3327b3", title: "Error" },
-    info:    { color: "#27a8fab3", title: "Info" },
-};
-
 export const Notification: FC<NotificationProps> = ({ children, handleClose, time, notifyType }) => {
-    const [typeCofig, setTypeCofig] = useState<{ color: string, title: string }>(typeMap[notifyType])
-
-    useEffect(() => {
-        setTypeCofig(typeMap[notifyType]);
-        const popupTimer = setTimeout(handleClose, time);
-
-        return () => {
-            clearTimeout(popupTimer)
-        }
-    }, [time, handleClose, notifyType]);
+    const { typeCofig } = useNotification({ time, notifyType, handleClose });
 
     return (
         <div className={cn("container")} style={{ background: typeCofig.color }}>
