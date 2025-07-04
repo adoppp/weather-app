@@ -7,10 +7,11 @@ interface SwitcherButtonProps {
     type?: "button" | "submit" | "reset";
     active: any,
     onClick?: MouseEventHandler<HTMLButtonElement>;
+    className?: string
 }
 
 const cn = classNames.bind(styles);
 
-export const SwitcherButton: FC<SwitcherButtonProps> = ({ type = "button", onClick, active }) => {
-    return <button type={type} onClick={onClick} className={cn("button", active ? "active" : "")}></button>;
+export const SwitcherButton: FC<SwitcherButtonProps> = ({ type = "button", onClick, active, className }) => {
+    return <button type={type} onClick={onClick} className={cn("button", active && "active", className && className)}></button>;
 };

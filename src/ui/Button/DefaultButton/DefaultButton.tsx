@@ -7,10 +7,11 @@ interface DefaultButtonProps {
     type?: "button" | "submit" | "reset";
     children: ReactNode;
     onClick?: MouseEventHandler<HTMLButtonElement>;
+    className?: string
 }
 
 const cn = classNames.bind(styles);
 
-export const DefaultButton: FC<DefaultButtonProps> = ({ type = "button", children, onClick }) => {
-    return <button type={type} onClick={onClick} className={cn("button")}>{children}</button>;
+export const DefaultButton: FC<DefaultButtonProps> = ({ type = "button", children, onClick, className }) => {
+    return <button type={type} onClick={onClick} className={cn("button", className && className)}>{children}</button>;
 };

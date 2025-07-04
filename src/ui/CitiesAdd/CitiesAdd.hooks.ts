@@ -1,11 +1,13 @@
 import { useState, type FormEvent } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 import type { AppDispatch } from "@/store/store";
 import { addCity } from "@/store/reducers/citiesSlice";
+import { citiesSelector } from "@/store/selectors/citiesSelector";
 
 export const useCitiesAdd = () => {
     const [inputValue, setInputValue] = useState<string>("");
+    const cities = useSelector(citiesSelector);
     const dispatch = useDispatch<AppDispatch>();
 
     const handleChange = (e: string) => {
@@ -15,11 +17,15 @@ export const useCitiesAdd = () => {
     const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
-        if (inputValue !== "") {
-            dispatch(addCity(inputValue))
-            setInputValue("");
+        const exists = cities.some(city => city === inputValue);
+            
+        if (exists && inputValue === "") {
+            return;
         }
-    }
+
+        dispatch(addCity(inputValue))
+        setInputValue("");
+    };
 
     return { inputValue, handleChange, handleSubmit };
 };

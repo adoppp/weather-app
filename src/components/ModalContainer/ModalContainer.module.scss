@@ -1,0 +1,51 @@
+@use "@/styles/colors" as colors;
+@use "@/styles/variables" as variables;
+@use "@/styles/typography" as typography;
+
+.container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.415);
+    backdrop-filter: blur(2px);
+
+    & .content_box {
+        height: fit-content;
+        padding: 16px;
+        background-color: var(--main-bg);
+        border: 1px solid var(--svg-active);
+        border-radius: variables.$border-radius;
+        min-width: 320px;
+
+        & .close {
+            stroke: var(--text-color);
+            transition: variables.$transition;
+
+            &:hover {
+                stroke: colors.$gray;
+            }
+
+            &:active {
+                stroke: var(--svg-active);
+            }
+        }
+
+        & button:has(.close) {
+            margin-left: auto;
+            display: block;
+            margin-bottom: 24px;
+        }
+
+        & .content {
+            display: block;
+            width: fit-content;
+            margin: 0 auto;
+        }
+    }
+}
