@@ -164,7 +164,8 @@ button {
 .container_app {
     display: flex;
     padding: 16px;
-    height: 100vh;
+    height: 100%;
+    min-height: 100vh;
 
     & main {
         width: 100%;
