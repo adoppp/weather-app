@@ -1,0 +1,23 @@
+@use "@/styles/colors" as colors;
+@use "@/styles/variables" as variables;
+@use "@/styles/typography" as typography;
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 90vh;
+    padding: 20px;
+
+    & h1 {
+        @include typography.headingBig();
+
+        margin-bottom: 24px;
+    }
+
+    & p {
+        @include typography.headingCard();
+    }
+}
