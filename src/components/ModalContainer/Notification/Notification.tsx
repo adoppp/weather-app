@@ -3,7 +3,7 @@ import classNames from "classnames/bind";
 
 import styles from "@components/ModalContainer/Notification/Notification.module.scss";
 
-import CloseIcon from "@assets/svg/close.svg?react";
+import { CloseIcon } from "@assets/svg";
 import { Button } from "@/ui/Button/Button";
 import type { NotifyVariant } from "@components/ModalContainer/ModalContainer.types";
 import { useNotification } from "./Notification.hooks";
@@ -24,8 +24,8 @@ export const Notification: FC<NotificationProps> = ({ children, handleClose, tim
         <div className={cn("container")} style={{ background: typeCofnig.color }}>
             <div className={cn("default")}>
                 <h2>{typeCofnig.title}</h2>
-                <Button type="svg" onClick={handleClose}>
-                    <CloseIcon className={cn("close")} />
+                <Button type="svg" onClick={handleClose} className={cn("close")}>
+                    {CloseIcon}
                 </Button>
             </div>
             <p>

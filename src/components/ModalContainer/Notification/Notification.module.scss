@@ -21,15 +21,20 @@
         }
 
         & .close {
-            stroke: var(--text-color);
-            transition: variables.$transition;
-    
-            &:hover {
-                stroke: colors.$gray;
-            }
-    
-            &:active {
-                stroke: #202B3B;
+            margin-left: auto;
+            display: block;
+
+            & svg {
+                stroke: var(--text-color);
+                transition: variables.$transition;
+            
+                &:hover {
+                    stroke: colors.$gray;
+                }
+            
+                &:active {
+                    stroke: var(--svg-active);
+                }
             }
         }
     }

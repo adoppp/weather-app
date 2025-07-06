@@ -26,13 +26,14 @@
     & p {
         @include typography.textBig();
     }
+
 }
 
-.svg_wind{
+.wind svg {
     stroke: colors.$gray
 }
 
-.svg_temp {
+.temp svg {
     fill: colors.$gray;
     width: 24px;
     height: 24px;
