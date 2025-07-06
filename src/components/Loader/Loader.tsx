@@ -2,7 +2,6 @@ import type { FC } from "react";
 import classNames from "classnames/bind";
 
 import styles from "@/components/Loader/Loader.module.scss";
-import { useLoader } from "./Loader.hooks";
 
 const cn = classNames.bind(styles);
 
