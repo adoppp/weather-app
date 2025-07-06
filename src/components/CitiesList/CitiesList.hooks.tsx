@@ -7,7 +7,7 @@ import styles from "@/components/CitiesList/CitiesList.module.scss";
 import { citiesSelector } from "@/store/selectors/citiesSelector";
 import type { AppDispatch } from "@/store/store";
 import { deleteCity } from "@/store/reducers/citiesSlice";
-import Trash from "@assets/svg/trash.svg?react";
+import { TrashIcon } from "@assets/svg";
 import { useState } from "react";
 import { ModalContainer } from "../ModalContainer/ModalContainer";
 import { Button } from "@/ui/Button/Button";
@@ -50,7 +50,7 @@ export const useCitiesList = () => {
                     {item}
                 </p>
                 <Button type="svg" onClick={() => handleOpenModal(item)}>
-                    <Trash />
+                    {TrashIcon}
                 </Button>
             </li>
         )

@@ -3,7 +3,7 @@ import classNames from "classnames/bind";
 
 import styles from "@components/ModalContainer/Modal/Modal.module.scss";
 
-import CloseIcon from "@assets/svg/close.svg?react";
+import { CloseIcon } from "@assets/svg";
 import { Button } from "@/ui/Button/Button";
 
 interface ModalProps {
@@ -17,8 +17,8 @@ export const Modal: FC<ModalProps> = ({ children, handleClose }) => {
     return (
             <div className={cn("container")}>
                 <div className={cn("content_box")}>
-                    <Button type="svg" onClick={handleClose}>
-                        <CloseIcon className={cn("close")} />
+                    <Button type="svg" onClick={handleClose} className={cn("close")}>
+                        {CloseIcon}
                     </Button>
                     <div className={cn("content")}>
                         {children}

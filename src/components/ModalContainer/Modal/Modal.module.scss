@@ -24,22 +24,22 @@
         min-width: 320px;
 
         & .close {
-            stroke: var(--text-color);
-            transition: variables.$transition;
-
-            &:hover {
-                stroke: colors.$gray;
-            }
-
-            &:active {
-                stroke: var(--svg-active);
-            }
-        }
-
-        & button:has(.close) {
             margin-left: auto;
             display: block;
             margin-bottom: 24px;
+
+            & svg {
+                stroke: var(--text-color);
+                transition: variables.$transition;
+            
+                &:hover {
+                    stroke: colors.$gray;
+                }
+            
+                &:active {
+                    stroke: var(--svg-active);
+                }
+            }
         }
 
         & .content {
