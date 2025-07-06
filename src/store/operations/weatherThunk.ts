@@ -23,7 +23,7 @@ export const getCurrentWeather = createAsyncThunk(
             );
             return response.data;
         } catch (error: any) {
-            REJECTED(error, thunkAPI);
+            return REJECTED(error, thunkAPI);
         }
     }
 );
@@ -36,7 +36,7 @@ export const getForecast = createAsyncThunk(
             
             return response.data;
         } catch (error) {
-            REJECTED(error, thunkAPI);
+            return REJECTED(error, thunkAPI);
         }
     }
 );

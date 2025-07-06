@@ -7,7 +7,7 @@ import { ThemeSwitcher } from "@/ui/ThemeSwitcher/ThemeSwitcher";
 
 const cn = classNames.bind(styles);
 
-export const Settings: FC = () => {
+const Settings: FC = () => {
 
     return (
         <div>
@@ -16,3 +16,5 @@ export const Settings: FC = () => {
         </div>
     )
 };
+
+export default Settings;

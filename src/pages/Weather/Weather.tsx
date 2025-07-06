@@ -1,6 +1,8 @@
 import { WeatherData } from "@/sections/WeatherData/WeatherData";
 import type { FC } from "react";
 
-export const Weather: FC = () => {
+const Weather: FC = () => {
     return <WeatherData />
 };
+
+export default Weather

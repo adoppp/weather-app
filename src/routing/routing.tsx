@@ -1,8 +1,11 @@
-import { App } from "@/App";
-import { Cities } from "@/pages/Cities/Cities";
-import { Settings } from "@/pages/Settings/Settings";
-import { Weather } from "@/pages/Weather/Weather";
+import { lazy } from "react";
 import { createBrowserRouter, Navigate } from "react-router-dom";
+import { App } from "@/App";
+
+const Cities = lazy(() => import("@/pages/Cities/Cities"));
+const Settings = lazy(() => import("@/pages/Settings/Settings"));
+const Weather = lazy(() => import("@/pages/Weather/Weather"))
+
 
 export const router = createBrowserRouter([
     {
