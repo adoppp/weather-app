@@ -1,6 +1,6 @@
 - lng
 - loader +++
 - map(api)
-- error
+- error => need to refactor(chage data, not jsx), rename pages(+page)
 - popup delete +++
 - notifications +++
