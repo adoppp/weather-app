@@ -1,0 +1,50 @@
+{
+    "en": {
+        "nav": {
+            "weather": "Weather",
+            "cities": "Cities",
+            "settings": "Settings"
+        },
+        "search": "Search",
+        "forecast": {
+            "title": "Forecast",
+            "temp": "temp"
+        },
+        "air_conditions": {
+            "title": "Air conditions",
+            "feels": "Fells like",
+            "wind": "wind",
+            "w_speed": "m/s"
+        },
+        "add_city": "Add city",
+        "settings": {
+            "title": "Settings",
+            "theme": "Change theme",
+            "current": "current:"
+        }
+    },
+    "ru": {
+        "nav": {
+            "weather": "Погода",
+            "cities": "Города",
+            "settings": "Настройки"
+        },
+        "search": "Поиск",
+        "forecast": {
+            "title": "Прогноз",
+            "temp": "темп"
+        },
+        "air_conditions": {
+            "title": "Качество воздуха",
+            "feels": "Ощущается как",
+            "wind": "Ветер",
+            "w_speed": "м/с"
+        },
+        "add_city": "Добавить город",
+        "settings": {
+            "title": "Настройки",
+            "theme": "Изменить тему",
+            "current": "сейчас:"
+        }
+    }
+}

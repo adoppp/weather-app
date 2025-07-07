@@ -1,17 +1,9 @@
-import { useEffect } from "react";
-
-import { useTheme, type Theme } from "@/utils/useTheme/useTheme";
+import { useTheme } from "@/utils/useTheme/useTheme";
+import { useLocalisation } from "@/utils/useLocalisation/useLocalisation";
 
 export const useApp = () => {
-    const { theme, setTheme } = useTheme();
-    
-    useEffect(() => {
-        const stored = localStorage.getItem("theme") as Theme | null;
-        const initial = stored === "light" || stored === "dark" ? stored : "dark";
-            
-        setTheme(initial);
-        document.body.setAttribute("data-theme", initial);
-    }, [theme, setTheme]);
+    const { } = useLocalisation();
+    const { } = useTheme();
 
     return {};
 };
