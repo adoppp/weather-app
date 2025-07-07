@@ -14,7 +14,7 @@ export const useCitiesAdd = () => {
     const cities = useSelector(citiesSelector);
     const [message, setMessage] = useState<string>("City added");
     const dispatch = useDispatch<AppDispatch>();
-
+    
     const handleChange = (e: string) => {
         setInputValue(e);
     };
