@@ -1,0 +1,10 @@
+@use "@/styles/colors" as colors;
+@use "@/styles/variables" as variables;
+@use "@/styles/typography" as typography;
+
+.container_map {
+    height: 520px;
+    width: 100%;
+    border-radius: variables.$border-radius;
+    margin-top: 12px;
+}

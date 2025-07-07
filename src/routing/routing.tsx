@@ -7,6 +7,7 @@ import { NotFoundPage } from "@/pages/NotFoundPage/NotFoundPage";
 const CitiesPage = lazy(() => import("@/pages/CitiesPage/CitiesPage"));
 const SettingsPage = lazy(() => import("@/pages/SettingsPage/SettingsPage"));
 const WeatherPage = lazy(() => import("@/pages/WeatherPage/WeatherPage"));
+const MapPage = lazy(() => import("@/pages/MapPage/MapPage")); 
 
 
 export const router = createBrowserRouter([
@@ -18,6 +19,7 @@ export const router = createBrowserRouter([
             { index: true, element: <Navigate to="weather" replace /> },
             { path: "weather", element: <WeatherPage /> },
             { path: "cities", element: <CitiesPage /> },
+            { path: "map", element: <MapPage/>},
             { path: "settings", element: <SettingsPage /> },
             { path: "*", element: <NotFoundPage /> },
         ],

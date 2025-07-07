@@ -4,13 +4,19 @@ import type { WeatherResponse } from "@/store/reducers/weatherSlice.types";
 
 const initialState: WeatherResponse = {
     todayData: null,
-    forecastData: null
+    forecastData: null,
+    layer: "temp_new",
 };
 
-const themeSlice = createSlice({
+const weatherSlice = createSlice({
     name: "weather",
     initialState,
-    reducers: {},
+    reducers: {
+        setLayer: (state, action) => {
+            console.log(action)
+            state.layer = action.payload;
+        }
+    },
     extraReducers(builder) {
         builder.addCase(getCurrentWeather.fulfilled, (state, action) => {
             state.todayData = action.payload;
@@ -21,4 +27,5 @@ const themeSlice = createSlice({
     },
 });
 
-export const weatherReducer = themeSlice.reducer;
+export const { setLayer } = weatherSlice.actions;
+export const weatherReducer = weatherSlice.reducer;

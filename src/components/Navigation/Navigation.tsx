@@ -3,7 +3,7 @@ import classNames from "classnames/bind";
 
 import styles from "@/components/Navigation/Navigation.module.scss";
 
-import { CloudIcon, CitiesIcon, SettingsIcon } from "@assets/svg";
+import { CloudIcon, CitiesIcon, SettingsIcon, MapIcon } from "@assets/svg";
 import { useNavigation } from "@/components/Navigation/Navigation.hooks";
 
 const cn = classNames.bind(styles);
@@ -20,6 +20,10 @@ export const Navigation = () => {
             <NavLink to="/weather-app/cities">
                 {CitiesIcon}
                 {language.nav.cities}
+            </NavLink>
+            <NavLink to="/weather-app/map">
+                {MapIcon}
+                {language.nav.map}
             </NavLink>
             <NavLink to="/weather-app/settings">
                 {SettingsIcon}

@@ -3,6 +3,7 @@
         "nav": {
             "weather": "Weather",
             "cities": "Cities",
+            "map": "Map",
             "settings": "Settings"
         },
         "search": "Search",
@@ -21,12 +22,21 @@
             "theme": "Change theme",
             "current": "currently:",
             "lng": "Language"
+        },
+        "map": {
+            "temp": "Temperature",
+            "wind": "Wind",
+            "pressure": "Pressure",
+            "precipitation": "Precipitation",
+            "clouds": "Clouds",
+            "loc": "Your location"
         }
     },
     "ru": {
         "nav": {
             "weather": "Погода",
             "cities": "Города",
+            "map": "Карта",
             "settings": "Настройки"
         },
         "search": "Поиск",
@@ -45,12 +55,21 @@
             "theme": "Изменить тему",
             "current": "актуальная:",
             "lng": "Язык"
+        },
+        "map": {
+            "temp": "Температура",
+            "wind": "Ветер",
+            "pressure": "Давление",
+            "precipitation": "Осадки",
+            "clouds": "Облака",
+            "loc": "Твоё местоположение"
         }
     },
     "ua": {
         "nav": {
             "weather": "Погода",
             "cities": "Міста",
+            "map": "Мапа",
             "settings": "Налаштування"
         },
         "search": "Пошук",
@@ -69,12 +88,21 @@
             "theme": "Змінити тему",
             "current": "актуальна:",
             "lng": "Мова"
+        },
+        "map": {
+            "temp": "Температура",
+            "wind": "Вітер",
+            "pressure": "Тиск",
+            "precipitation": "Опади",
+            "clouds": "Хмари",
+            "loc": "Ваше місце розташування"
         }
     },
     "de": {
         "nav": {
             "weather": "Wetter",
             "cities": "Städte",
+            "map": "Karte",
             "settings": "Einstellungen"
         },
         "search": "Suchen",
@@ -93,12 +121,21 @@
             "theme": "Thema ändern",
             "current": "aktuell:",
             "lng": "Spache"
+        },
+        "map": {
+            "temp": "Temperatur",
+            "wind": "Wind",
+            "pressure": "Druck",
+            "precipitation": "Niederschlag",
+            "clouds": "Wolken",
+            "loc": "Ihr Standort"
         }
     },
     "pl": {
         "nav": {
             "weather": "Pogoda",
             "cities": "Miasta",
+            "map": "Mapa",
             "settings": "Ustawienia"
         },
         "search": "Szukaj",
@@ -117,6 +154,14 @@
             "theme": "Zmienić wygląd",
             "current": "aktualny:",
             "lng": "Język"
+        },
+        "map": {
+            "temp": "Temperatura",
+            "wind": "Wiatr",
+            "pressure": "Ciśnienie",
+            "precipitation": "Osad",
+            "clouds": "Chmury",
+            "loc": "Twoja lokalizacja"
         }
     }
 }
