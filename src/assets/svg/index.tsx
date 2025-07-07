@@ -1,10 +1,10 @@
 export const CitiesIcon = (
     <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M30 55C43.8071 55 55 43.8071 55 30C55 16.1929 43.8071 5 30 5C16.1929 5 5 16.1929 5 30C5 43.8071 16.1929 55 30 55Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-        <path d="M20 7.5H22.5C17.625 22.1 17.625 37.9 22.5 52.5H20" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-        <path d="M37.5 7.5C42.375 22.1 42.375 37.9 37.5 52.5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-        <path d="M7.5 40V37.5C22.1 42.375 37.9 42.375 52.5 37.5V40" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-        <path d="M7.5 22.5C22.1 17.625 37.9 17.625 52.5 22.5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M20 7.5H22.5C17.625 22.1 17.625 37.9 22.5 52.5H20" strokeWidth="1.5" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M37.5 7.5C42.375 22.1 42.375 37.9 37.5 52.5" strokeWidth="1.5" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M7.5 40V37.5C22.1 42.375 37.9 42.375 52.5 37.5V40" strokeWidth="1.5" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M7.5 22.5C22.1 17.625 37.9 17.625 52.5 22.5" strokeWidth="1.5" stroke-linecap="round" stroke-linejoin="round" />
     </svg>
 );
 
@@ -70,3 +70,9 @@ export const WindIcon = (
         <path d="M2 9H9.31C10.8 9 12 7.79 12 6.31C12 4.82 10.79 3.62 9.31 3.62C7.82 3.62 6.62 4.83 6.62 6.31V6.69" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
     </svg>
 );
+
+export const ArrowIcon = (
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+        <path d="M19.9201 8.94995L13.4001 15.47C12.6301 16.24 11.3701 16.24 10.6001 15.47L4.08008 8.94995" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+)

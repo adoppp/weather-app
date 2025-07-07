@@ -7,3 +7,21 @@
     
     margin-bottom: 32px;
 }
+
+.settings_list {
+    & li {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        margin-bottom: 12px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        & p {
+            @include typography.text();
+        }
+    }
+}

@@ -1,6 +1,6 @@
 import { createContext, useContext, useEffect, useState, type FC, type ReactNode } from "react";
 
-type Languages = "en" | "ru" | "ua" | "de";
+import type { Languages } from "@/types";
 
 interface LocalisationContextState {
     lng: Languages,

@@ -19,7 +19,8 @@
         "settings": {
             "title": "Settings",
             "theme": "Change theme",
-            "current": "current:"
+            "current": "current:",
+            "lng": "Language"
         }
     },
     "ru": {
@@ -42,7 +43,8 @@
         "settings": {
             "title": "Настройки",
             "theme": "Изменить тему",
-            "current": "сейчас:"
+            "current": "сейчас:",
+            "lng": "Язык"
         }
     },
     "ua": {
@@ -65,7 +67,8 @@
         "settings": {
             "title": "Налаштування",
             "theme": "Змінити тему",
-            "current": "зараз:"
+            "current": "зараз:",
+            "lng": "Мова"
         }
     },
     "de": {
@@ -88,7 +91,8 @@
         "settings": {
             "title": "Einstellungen",
             "theme": "Thema ändern",
-            "current": "jetzt:"
+            "current": "jetzt:",
+            "lng": "Spache"
         }
     }
 }

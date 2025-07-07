@@ -1,35 +1,32 @@
-import { type ChangeEvent, type FC } from "react";
+import { type FC } from "react";
 import classNames from "classnames/bind";
 
 import styles from "@pages/SettingsPage/SettingsPage.module.scss";
 
-import { ThemeSwitcher } from "@/ui/ThemeSwitcher/ThemeSwitcher";
-
-import { useLocalisation } from "@/utils/useLocalisation/useLocalisation";
-import localisation from "@/data/lng/localisation.json";
+import { Select } from "@/ui/Select/Select";
+import { useSettingsPage } from "./SettingsPage.hooks";
+import { Button } from "@/ui/Button/Button";
 
 const cn = classNames.bind(styles);
 
 const SettingsPage: FC = () => {
-    const { lng, setLanguage } = useLocalisation();
-    const language = localisation[lng];
-    
-    const handleLng = (e: ChangeEvent<HTMLSelectElement>) => {
-        setLanguage(e.target.value as "en" | "ru")
-    };
+    const { lng, language, handleLng, selectOptions, theme, toggleTheme } = useSettingsPage();
 
     return (
         <div>
             <h1 className={cn("title")}>{language.settings.title}</h1>
-            <ThemeSwitcher />
-            <select value={lng} onChange={(lng) => handleLng(lng)}>
-                <option value="en">En</option>
-                <option value="ru">Ru</option>
-                <option value="ua">Ua</option>
-                <option value="de">De</option>
-            </select>
+            <ul className={cn("settings_list")}>
+                <li>
+                    <p>{`${language.settings.theme} (${language.settings.current} ${theme})`}</p>
+                    <Button type="switcher" onClick={toggleTheme} active={theme === "light" ? true : false} />
+                </li>
+                <li>
+                    <p>{language.settings.lng}</p>
+                    <Select sValue={lng} options={selectOptions} onChange={handleLng} />
+                </li>
+            </ul>
         </div>
-    )
+    );
 };
 
 export default SettingsPage;
