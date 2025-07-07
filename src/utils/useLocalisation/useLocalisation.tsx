@@ -1,6 +1,6 @@
 import { createContext, useContext, useEffect, useState, type FC, type ReactNode } from "react";
 
-type Languages = "en" | "ru";
+type Languages = "en" | "ru" | "ua" | "de";
 
 interface LocalisationContextState {
     lng: Languages,
@@ -22,7 +22,7 @@ export const LocalisationProvider: FC<LocalisationProviderProps> = ({ children }
     const getLanguage = () => {
         const stored = localStorage.getItem("lng");
 
-        if(stored === "en" || stored === "ru") {
+        if(stored === "en" || stored === "ru" || stored === "ua" || stored === "de") {
             setLng(stored as Languages);
         } else {
             localStorage.setItem("lng", "en")

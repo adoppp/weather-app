@@ -25,6 +25,8 @@ const SettingsPage: FC = () => {
             <select value={lng} onChange={(lng) => handleLng(lng)}>
                 <option value="en">En</option>
                 <option value="ru">Ru</option>
+                <option value="ua">Ua</option>
+                <option value="de">De</option>
             </select>
         </div>
     )

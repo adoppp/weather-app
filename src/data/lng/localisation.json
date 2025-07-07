@@ -30,8 +30,7 @@
         },
         "search": "Поиск",
         "forecast": {
-            "title": "Прогноз",
-            "temp": "темп"
+            "title": "Прогноз"
         },
         "air_conditions": {
             "title": "Качество воздуха",
@@ -44,6 +43,52 @@
             "title": "Настройки",
             "theme": "Изменить тему",
             "current": "сейчас:"
+        }
+    },
+    "ua": {
+        "nav": {
+            "weather": "Погода",
+            "cities": "Міста",
+            "settings": "Налаштування"
+        },
+        "search": "Пошук",
+        "forecast": {
+            "title": "Прогноз"
+        },
+        "air_conditions": {
+            "title": "Якість повітря",
+            "feels": "Відчувається як",
+            "wind": "Вітер",
+            "w_speed": "м/с"
+        },
+        "add_city": "Додати місто",
+        "settings": {
+            "title": "Налаштування",
+            "theme": "Змінити тему",
+            "current": "зараз:"
+        }
+    },
+    "de": {
+        "nav": {
+            "weather": "Wetter",
+            "cities": "Städte",
+            "settings": "Einstellungen"
+        },
+        "search": "Suchen",
+        "forecast": {
+            "title": "Wettervorhersage"
+        },
+        "air_conditions": {
+            "title": "Luft Qualität",
+            "feels": "Gefühlt",
+            "wind": "Wind",
+            "w_speed": "m/s"
+        },
+        "add_city": "Stadt hinzufügen",
+        "settings": {
+            "title": "Einstellungen",
+            "theme": "Thema ändern",
+            "current": "jetzt:"
         }
     }
 }
