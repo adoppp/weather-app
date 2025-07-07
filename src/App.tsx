@@ -17,7 +17,7 @@ import { BurgerIcon, CloseIcon } from "@/assets/svg";
 const cn = classNames.bind(styles);
 
 export function App() {
-    const { isHide, toggleHide } = useApp();
+    const { isHide, toggleHide, menuRef } = useApp();
 
     return (
         <div className={cn("container_app")}>
@@ -25,7 +25,7 @@ export function App() {
                 {BurgerIcon}
             </Button>
 
-            <aside className={cn("burger_menu", isHide && "burger_hide")}>
+            <aside className={cn("burger_menu", isHide && "burger_hide")} ref={menuRef}>
                 <Button type="svg" className={cn("close")} onClick={toggleHide}>
                     {CloseIcon}
                 </Button>

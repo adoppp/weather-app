@@ -11,10 +11,12 @@ import { errorSelector } from "@/store/selectors/errorSelector";
 import { Loader } from "@/components/Loader/Loader";
 import { ErrorPage } from "@/pages/ErrorPage/ErrorPage";
 import { useLocalisation } from "@/utils/useLocalisation/useLocalisation";
+import { weatherSelector } from "@/store/selectors/weatherSelector";
 
 export const useWeatherPage = () => {
     const location = useGetLocation();
     const routerLocation = useLocation();
+    const weather = useSelector(weatherSelector);
     const isLoading = useSelector(loaderSelector);
     const error = useSelector(errorSelector);
     const { lng } = useLocalisation();
@@ -26,6 +28,8 @@ export const useWeatherPage = () => {
         if (cityFromState) {
             dispatch(getCurrentWeather({ city: cityFromState, lng }));
             dispatch(getForecast({ city: cityFromState, lng }));
+            return;
+        } else if (weather) {
             return;
         } else if (location && typeof location === "object") {
             dispatch(getCurrentWeather({ cords: { lat: location.lat, lon: location.lon }, lng }));
@@ -39,7 +43,7 @@ export const useWeatherPage = () => {
 
     }, [location, routerLocation.state, dispatch]);
 
-    const loadingOrError = isLoading ? <Loader /> : error ? <ErrorPage /> : null;;
+    const loadingOrError = isLoading ? <Loader /> : error ? <ErrorPage /> : null;
 
     return { loadingOrError };
 };

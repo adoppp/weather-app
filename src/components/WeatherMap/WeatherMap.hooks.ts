@@ -6,6 +6,8 @@ import { useGetLocation } from "@/utils/useGetLocation/useGetLocation";
 import type { AppDispatch } from "@/store/store";
 import { getCurrentWeather, getForecast } from "@/store/operations/weatherThunk";
 import { useLocalisation } from "@/utils/useLocalisation/useLocalisation";
+import localisation from "@/data/lng/localisation.json";
+
 
 
 export const useWeatherMap = () => {
@@ -15,6 +17,7 @@ export const useWeatherMap = () => {
     const weather = useSelector(weatherSelector);
     const dispatch = useDispatch<AppDispatch>();
     const { lng } = useLocalisation();
+    const language = localisation[lng];
 
     useEffect(() => {
         if(!weather) {
@@ -30,5 +33,5 @@ export const useWeatherMap = () => {
         }
     }, [])
     
-    return { API_KEY, layer, weather }
+    return { API_KEY, layer, weather, language }
 }

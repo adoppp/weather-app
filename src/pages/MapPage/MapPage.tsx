@@ -3,12 +3,17 @@ import { Select } from "@/ui/Select/Select";
 import { useMapPage } from "./MapPage.hooks";
 
 const MapPage = () => {
-    const { layer, mapOptions, handleMap } = useMapPage();
+    const { layer, mapOptions, handleMap, loadingOrError } = useMapPage();
 
     return(
         <>
-            <Select sValue={layer} options={mapOptions} onChange={handleMap} />
-            <WeatherMap />
+        { 
+            loadingOrError ? loadingOrError :
+            <>
+                <Select sValue={layer} options={mapOptions} onChange={handleMap} />
+                <WeatherMap />
+            </>
+        }
         </>
     )
 };

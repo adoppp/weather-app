@@ -9,7 +9,7 @@ import { useWeatherMap } from "@/components/WeatherMap/WeatherMap.hooks";
 const cn = classNames.bind(styles);
 
 export const WeatherMap: FC = () => {
-    const { weather, layer, API_KEY } = useWeatherMap()
+    const { weather, layer, API_KEY, language } = useWeatherMap()
 
     return (
         <>
@@ -28,7 +28,7 @@ export const WeatherMap: FC = () => {
 
                     <Marker position={[weather?.coord.lat as number,  weather?.coord.lon as number]}>
                         <Popup>
-                        Your location
+                        {language.map.loc}
                         </Popup>
                     </Marker>
                 </MapContainer> 

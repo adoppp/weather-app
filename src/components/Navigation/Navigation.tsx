@@ -23,7 +23,7 @@ export const Navigation = () => {
             </NavLink>
             <NavLink to="/weather-app/map">
                 {MapIcon}
-                Map
+                {language.nav.map}
             </NavLink>
             <NavLink to="/weather-app/settings">
                 {SettingsIcon}
