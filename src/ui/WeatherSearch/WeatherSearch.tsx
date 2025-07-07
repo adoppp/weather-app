@@ -10,14 +10,14 @@ import { Button } from "@/ui/Button/Button";
 const cn = classNames.bind(styles);
 
 export const WeatherSearch: FC = () => {
-    const { inputValue, handleChange, handleSubmit, Notification } = useWeatherSearch();
+    const { inputValue, handleChange, handleSubmit, Notification, language } = useWeatherSearch();
 
     return (
         <>
             <form onSubmit={handleSubmit} className={cn("form")}>
-                <Input label="Search" value={inputValue} onChange={handleChange} />
+                <Input label={language.search} value={inputValue} onChange={handleChange} />
                 <Button type="default" btnType="submit">
-                    Search
+                    {language.search}
                 </Button>
             </form>
             {Notification}

@@ -10,11 +10,11 @@ import { useCitiesAdd } from "@ui/CitiesAdd/CitiesAdd.hooks";
 const cn = classNames.bind(styles);
 
 export const CitiesAdd: FC = () => {
-    const { inputValue, handleChange, handleSubmit, Notification } = useCitiesAdd();
+    const { inputValue, handleChange, handleSubmit, Notification, language } = useCitiesAdd();
     return (
         <>
             <form onSubmit={handleSubmit} className={cn("form")}>
-                <Input label="Add city" value={inputValue} onChange={handleChange} />
+                <Input label={language.add_city} value={inputValue} onChange={handleChange} />
                 <Button type="default" btnType="submit">
                     +
                 </Button>

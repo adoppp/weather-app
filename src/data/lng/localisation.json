@@ -7,8 +7,7 @@
         },
         "search": "Search",
         "forecast": {
-            "title": "Forecast",
-            "temp": "temp"
+            "title": "Forecast"
         },
         "air_conditions": {
             "title": "Air conditions",
