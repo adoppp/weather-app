@@ -11,7 +11,7 @@ export const useCurrentWeatherCrad = () => {
     const description = weather?.description ?? "No data loaded";
     const temp = useTruncNumber(currentWeatherData?.main.temp);
     const iconUrl = weather?.icon != ""
-        ? `http://openweathermap.org/img/wn/${weather?.icon}@2x.png`
+        ? `https://openweathermap.org/img/wn/${weather?.icon}@2x.png`
         : "";
     
     return { city, description, temp, iconUrl };
