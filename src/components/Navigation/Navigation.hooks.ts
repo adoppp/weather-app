@@ -1,7 +1,7 @@
 import { useLocalisation } from "@/utils/useLocalisation/useLocalisation";
 import localisation from "@/data/lng/localisation.json";
 
-export const useSideBar = () => {
+export const useNavigation = () => {
     const { lng } = useLocalisation();
     const language = localisation[lng];
 
