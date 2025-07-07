@@ -56,7 +56,8 @@ export type WeatherResponse = {
         sunrise: number;
         sunset: number;
     };
-    } | null
+    } | null,
+    layer: "clouds_new" | "precipitation_new" | "pressure_new" | "wind_new" | "temp_new"
 };
 
 export interface ForecastItem {

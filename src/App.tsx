@@ -3,6 +3,7 @@ import { Outlet } from "react-router";
 import classNames from "classnames/bind";
 
 import "@/App.scss";
+import 'leaflet/dist/leaflet.css';
 import styles from "@/App.module.scss";
 
 import { Navigation } from "@/components/Navigation/Navigation";
