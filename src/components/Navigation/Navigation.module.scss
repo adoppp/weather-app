@@ -2,14 +2,6 @@
 @use "@/styles/variables" as variables;
 @use "@/styles/typography" as typography;
 
-.sidebar {
-    background-color: var(--secondary-bg);
-    padding-top: 32px;
-    border-radius: variables.$border-radius;
-    width: 100%;
-    max-width: 140px;
-}
-
 .navigation {
     display: flex;
     flex-direction: column;

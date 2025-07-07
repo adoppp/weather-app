@@ -22,7 +22,7 @@ export const LocalisationProvider: FC<LocalisationProviderProps> = ({ children }
     const getLanguage = () => {
         const stored = localStorage.getItem("lng");
 
-        if(stored === "en" || stored === "ru" || stored === "ua" || stored === "de") {
+        if(stored === "en" || stored === "ru" || stored === "ua" || stored === "de" || stored === "pl") {
             setLng(stored as Languages);
         } else {
             localStorage.setItem("lng", "en")

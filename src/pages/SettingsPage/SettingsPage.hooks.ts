@@ -28,6 +28,10 @@ export const useSettingsPage = () => {
             label: "Ua"
         },
         {
+            oValue: "pl",
+            label: "Pl"
+        },
+        {
             oValue: "ru",
             label: "Ru"
         },

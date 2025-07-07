@@ -1,17 +1,39 @@
-import "@/App.scss";
-import { Outlet } from "react-router";
-import { SideBar } from "@/components/SideBar/SideBar";
-import { useApp } from "@/App.hooks";
 import { Suspense } from "react";
+import { Outlet } from "react-router";
+import classNames from "classnames/bind";
+
+import "@/App.scss";
+import styles from "@/App.module.scss";
+
+import { Navigation } from "@/components/Navigation/Navigation";
+import { useApp } from "@/App.hooks";
 import { Loader } from "@/components/Loader/Loader";
-import { ErrorBoundary } from "./components/ErrorBoundary/ErrorBoundary";
+import { ErrorBoundary } from "@/components/ErrorBoundary/ErrorBoundary";
+import { Button } from "@/ui/Button/Button";
+import { BurgerIcon, CloseIcon } from "@/assets/svg";
+
+
+const cn = classNames.bind(styles);
 
 export function App() {
-    const { } = useApp()
+    const { isHide, toggleHide } = useApp();
 
     return (
-        <div className="container_app">
-            <SideBar />
+        <div className={cn("container_app")}>
+            <Button type="svg" className={cn("burger_icon")} onClick={toggleHide}>
+                {BurgerIcon}
+            </Button>
+
+            <aside className={cn("burger_menu", isHide && "burger_hide")}>
+                <Button type="svg" className={cn("close")} onClick={toggleHide}>
+                    {CloseIcon}
+                </Button>
+                <Navigation />
+            </aside>
+
+            <aside className={cn("sidebar")}>
+                <Navigation />
+            </aside>
 
             <main>
                 <ErrorBoundary>

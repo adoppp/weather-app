@@ -75,4 +75,12 @@ export const ArrowIcon = (
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
         <path d="M19.9201 8.94995L13.4001 15.47C12.6301 16.24 11.3701 16.24 10.6001 15.47L4.08008 8.94995" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
     </svg>
-)
+);
+
+export const BurgerIcon = (
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+        <path d="M1 8H15" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M1 14H15" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M1 2H15" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+);

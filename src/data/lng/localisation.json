@@ -19,7 +19,7 @@
         "settings": {
             "title": "Settings",
             "theme": "Change theme",
-            "current": "current:",
+            "current": "currently:",
             "lng": "Language"
         }
     },
@@ -43,7 +43,7 @@
         "settings": {
             "title": "Настройки",
             "theme": "Изменить тему",
-            "current": "сейчас:",
+            "current": "актуальная:",
             "lng": "Язык"
         }
     },
@@ -67,7 +67,7 @@
         "settings": {
             "title": "Налаштування",
             "theme": "Змінити тему",
-            "current": "зараз:",
+            "current": "актуальна:",
             "lng": "Мова"
         }
     },
@@ -91,8 +91,32 @@
         "settings": {
             "title": "Einstellungen",
             "theme": "Thema ändern",
-            "current": "jetzt:",
+            "current": "aktuell:",
             "lng": "Spache"
+        }
+    },
+    "pl": {
+        "nav": {
+            "weather": "Pogoda",
+            "cities": "Miasta",
+            "settings": "Ustawienia"
+        },
+        "search": "Szukaj",
+        "forecast": {
+            "title": "Prognoza"
+        },
+        "air_conditions": {
+            "title": "Jakość powietrza",
+            "feels": "Odczuwalna",
+            "wind": "Wiatr",
+            "w_speed": "m/s"
+        },
+        "add_city": "Dodać miasto",
+        "settings": {
+            "title": "Ustawienia",
+            "theme": "Zmienić wygląd",
+            "current": "aktualny:",
+            "lng": "Język"
         }
     }
 }
