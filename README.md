@@ -1,4 +1,4 @@
-- lng
+- lng => add all localisation, select styles.
 - loader +++
 - map(api)
 - error +++

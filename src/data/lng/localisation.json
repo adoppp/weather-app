@@ -1,0 +1,98 @@
+{
+    "en": {
+        "nav": {
+            "weather": "Weather",
+            "cities": "Cities",
+            "settings": "Settings"
+        },
+        "search": "Search",
+        "forecast": {
+            "title": "Forecast"
+        },
+        "air_conditions": {
+            "title": "Air conditions",
+            "feels": "Fells like",
+            "wind": "wind",
+            "w_speed": "m/s"
+        },
+        "add_city": "Add city",
+        "settings": {
+            "title": "Settings",
+            "theme": "Change theme",
+            "current": "current:",
+            "lng": "Language"
+        }
+    },
+    "ru": {
+        "nav": {
+            "weather": "Погода",
+            "cities": "Города",
+            "settings": "Настройки"
+        },
+        "search": "Поиск",
+        "forecast": {
+            "title": "Прогноз"
+        },
+        "air_conditions": {
+            "title": "Качество воздуха",
+            "feels": "Ощущается как",
+            "wind": "Ветер",
+            "w_speed": "м/с"
+        },
+        "add_city": "Добавить город",
+        "settings": {
+            "title": "Настройки",
+            "theme": "Изменить тему",
+            "current": "сейчас:",
+            "lng": "Язык"
+        }
+    },
+    "ua": {
+        "nav": {
+            "weather": "Погода",
+            "cities": "Міста",
+            "settings": "Налаштування"
+        },
+        "search": "Пошук",
+        "forecast": {
+            "title": "Прогноз"
+        },
+        "air_conditions": {
+            "title": "Якість повітря",
+            "feels": "Відчувається як",
+            "wind": "Вітер",
+            "w_speed": "м/с"
+        },
+        "add_city": "Додати місто",
+        "settings": {
+            "title": "Налаштування",
+            "theme": "Змінити тему",
+            "current": "зараз:",
+            "lng": "Мова"
+        }
+    },
+    "de": {
+        "nav": {
+            "weather": "Wetter",
+            "cities": "Städte",
+            "settings": "Einstellungen"
+        },
+        "search": "Suchen",
+        "forecast": {
+            "title": "Wettervorhersage"
+        },
+        "air_conditions": {
+            "title": "Luft Qualität",
+            "feels": "Gefühlt",
+            "wind": "Wind",
+            "w_speed": "m/s"
+        },
+        "add_city": "Stadt hinzufügen",
+        "settings": {
+            "title": "Einstellungen",
+            "theme": "Thema ändern",
+            "current": "jetzt:",
+            "lng": "Spache"
+        }
+    }
+}

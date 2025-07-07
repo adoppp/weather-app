@@ -1,0 +1,47 @@
+@use "@/styles/variables" as variables;
+@use "@/styles/colors" as colors;
+@use "@/styles/typography" as typography;
+
+.wrapper {
+    position: relative;
+    width: 100%;
+    max-width: fit-content;
+
+    & .select {
+        @include typography.text();
+
+        appearance: none;
+        width: 100%;
+        padding: 8px 40px 8px 12px;
+        background-color: var(--secondary-bg);
+        border: 1px solid var(--secondary-bg);
+        border-radius: variables.$border-radius;
+        color: var(--text-color);
+        cursor: pointer;
+        transition: variables.$transition;
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+}
+
+.icon {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+
+    & svg {
+        stroke: var(--btn-hover);
+        width: 16px;
+        height: 16px;
+        transition: variables.$transition;
+    }
+
+    .select:hover + & svg {
+        stroke: var(--svg-active);
+    }
+}

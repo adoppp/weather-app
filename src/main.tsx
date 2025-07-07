@@ -8,16 +8,19 @@ import { PersistGate } from 'redux-persist/integration/react';
 import { CityProvider } from '@/utils/useGetLocation/useGetLocation';
 import { ThemeProvider } from '@/utils/useTheme/useTheme';
 import { ErrorBoundary } from './components/ErrorBoundary/ErrorBoundary';
+import { LocalisationProvider } from './utils/useLocalisation/useLocalisation';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <ErrorBoundary>
       <Provider store={store}>
        <PersistGate loading={null} persistor={persistor}>
-         <CityProvider>
-            <ThemeProvider>
-              <RouterProvider router={router} />
-            </ThemeProvider>
+          <CityProvider>
+            <LocalisationProvider>
+              <ThemeProvider>
+                <RouterProvider router={router} />
+              </ThemeProvider>
+            </LocalisationProvider>
           </CityProvider>
         </PersistGate>
       </Provider>

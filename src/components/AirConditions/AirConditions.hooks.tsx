@@ -4,9 +4,13 @@ import { TempLowIcon, TempUnderMidIcon, TempMidIcon, TempHighIcon } from "@/asse
 
 import { weatherSelector } from "@/store/selectors/weatherSelector";
 import { useTruncNumber } from "@/utils/useTruncNumber/useTruncNumber";
+import { useLocalisation } from "@/utils/useLocalisation/useLocalisation";
+import localisation from "@/data/lng/localisation.json";
 
 export const useAirConditions = () => {
     const currentWeatherData = useSelector(weatherSelector);
+    const { lng } = useLocalisation();
+    const language = localisation[lng];
 
     const TempIcon = () => {
         const temp = useTruncNumber(currentWeatherData?.main.feels_like);
@@ -29,5 +33,5 @@ export const useAirConditions = () => {
         }
     };
 
-    return { TempIcon, currentWeatherData }
+    return { TempIcon, currentWeatherData, language }
 };
