@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import classNames from "classnames/bind";
 
-import styles from "@/sections/SideBar/SideBar.module.scss";
+import styles from "@/components/SideBar/SideBar.module.scss";
 
 import { CloudIcon, CitiesIcon, SettingsIcon } from "@assets/svg";
 

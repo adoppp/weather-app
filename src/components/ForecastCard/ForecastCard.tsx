@@ -6,6 +6,11 @@ import { useForecastCardHooks } from "@components/ForecastCard/ForecastCard.hook
 
 export const ForecastCard: FC = () => {
     const { formatedData } = useForecastCardHooks();
+    // const iffff =true
+
+    // if (iffff) {  
+    //     throw new Error("booom")
+    // }
     
     return (
         <CardContainer>

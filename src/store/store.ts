@@ -14,6 +14,7 @@ import {
 import { weatherReducer } from "@/store/reducers/weatherSlice";
 import { citiesReducer } from "@/store/reducers/citiesSlice";
 import { loaderReducer } from "@store/reducers/loaderSlice";
+import { errorReducer } from "@store/reducers/errorSlice";
 
 const persistConfig = {
     key: 'citiesData',
@@ -26,6 +27,7 @@ export const store = configureStore({
     reducer: {
         weatherData: weatherReducer,
         loader: loaderReducer,
+        error: errorReducer,
         citiesData: persistedCitiesReducer
     },
     middleware: (getDefaultMiddleware) =>

@@ -2,7 +2,7 @@ import { CitiesList } from "@/components/CitiesList/CitiesList";
 import { CitiesAdd } from "@/ui/CitiesAdd/CitiesAdd";
 import type { FC } from "react";
 
-const Cities: FC = () => {
+const CitiesPage: FC = () => {
     return (
         <div>
             <CitiesAdd />
@@ -11,4 +11,4 @@ const Cities: FC = () => {
     )
 };
 
-export default Cities;
+export default CitiesPage;

@@ -1,9 +1,10 @@
 import "@/App.scss";
 import { Outlet } from "react-router";
-import { SideBar } from "@/sections/SideBar/SideBar";
+import { SideBar } from "@/components/SideBar/SideBar";
 import { useApp } from "@/App.hooks";
 import { Suspense } from "react";
 import { Loader } from "@/components/Loader/Loader";
+import { ErrorBoundary } from "./components/ErrorBoundary/ErrorBoundary";
 
 export function App() {
     const { } = useApp()
@@ -13,9 +14,11 @@ export function App() {
             <SideBar />
 
             <main>
-                <Suspense fallback={<Loader />}>    
-                    <Outlet />
-                </Suspense>
+                <ErrorBoundary>
+                    <Suspense fallback={<Loader />}>    
+                        <Outlet />
+                    </Suspense>
+                </ErrorBoundary>
             </main>
         </div>
     );

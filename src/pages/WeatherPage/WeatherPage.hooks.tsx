@@ -7,11 +7,15 @@ import { getCurrentWeather, getForecast } from "@/store/operations/weatherThunk"
 import { useGetLocation } from "@/utils/useGetLocation/useGetLocation";
 import { useSelector } from "react-redux";
 import { loaderSelector } from "@/store/selectors/loaderSelector";
+import { errorSelector } from "@/store/selectors/errorSelector";
+import { Loader } from "@/components/Loader/Loader";
+import { ErrorPage } from "@/pages/ErrorPage/ErrorPage";
 
-export const useWeatherData = () => {
+export const useWeatherPage = () => {
     const location = useGetLocation();
     const routerLocation = useLocation();
     const isLoading = useSelector(loaderSelector);
+    const error = useSelector(errorSelector);
     const dispatch = useDispatch<AppDispatch>();
 
     useEffect(() => {
@@ -33,5 +37,7 @@ export const useWeatherData = () => {
 
     }, [location, routerLocation.state, dispatch]);
 
-    return { isLoading };
+    const loadingOrError = isLoading ? <Loader /> : error ? <ErrorPage /> : null;;
+
+    return { loadingOrError };
 };

@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+
 import { getCurrentWeather, getForecast } from "@store/operations/weatherThunk";
 
 interface LoaderState {
