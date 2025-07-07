@@ -1,6 +1,6 @@
 - lng
 - loader +++
 - map(api)
-- error => need to refactor(chage data, not jsx), rename pages(+page)
+- error => need to refactor(chage data, not tsx), rename pages(+page)
 - popup delete +++
 - notifications +++

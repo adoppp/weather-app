@@ -1,13 +1,13 @@
 import { type FC } from "react";
 import classNames from "classnames/bind";
 
-import styles from "@pages/Settings/Settings.module.scss";
+import styles from "@pages/SettingsPage/SettingsPage.module.scss";
 
 import { ThemeSwitcher } from "@/ui/ThemeSwitcher/ThemeSwitcher";
 
 const cn = classNames.bind(styles);
 
-const Settings: FC = () => {
+const SettingsPage: FC = () => {
 
     return (
         <div>
@@ -17,4 +17,4 @@ const Settings: FC = () => {
     )
 };
 
-export default Settings;
+export default SettingsPage;

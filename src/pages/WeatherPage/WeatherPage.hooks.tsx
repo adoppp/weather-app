@@ -11,7 +11,7 @@ import { errorSelector } from "@/store/selectors/errorSelector";
 import { Loader } from "@/components/Loader/Loader";
 import { ErrorPage } from "@/pages/ErrorPage/ErrorPage";
 
-export const useWeather = () => {
+export const useWeatherPage = () => {
     const location = useGetLocation();
     const routerLocation = useLocation();
     const isLoading = useSelector(loaderSelector);
