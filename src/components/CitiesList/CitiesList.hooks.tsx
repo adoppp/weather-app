@@ -9,7 +9,7 @@ import type { AppDispatch } from "@/store/store";
 import { deleteCity } from "@/store/reducers/citiesSlice";
 import { TrashIcon } from "@assets/svg";
 import { useState } from "react";
-import { ModalContainer } from "../ModalContainer/ModalContainer";
+import { ModalContainer } from "@components/ModalContainer/ModalContainer";
 import { Button } from "@/ui/Button/Button";
 
 const cn = classNames.bind(styles);
@@ -40,7 +40,7 @@ export const useCitiesList = () => {
     };
 
     const goToWeather = (city: string) => {
-        navigate(`/weather-app/weather`, { state: { city: city } });
+        navigate(`/weather-app/weather`, { state: { city } });
     };
 
     const listItem = cities.map((item, index) => {

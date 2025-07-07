@@ -4,12 +4,14 @@ import type { AppDispatch } from "@/store/store";
 import { getCurrentWeather, getForecast } from "@/store/operations/weatherThunk";
 import type { NotifyVariant } from "@/components/ModalContainer/ModalContainer.types";
 import { ModalContainer } from "@/components/ModalContainer/ModalContainer";
+import { useLocalisation } from "@/utils/useLocalisation/useLocalisation";
 
 export const useWeatherSearch = () => {
     const [inputValue, setInputValue] = useState<string>("");
     const [isOpen, setIsOpen] = useState<boolean>(false);
     const [nType, setNType] = useState<NotifyVariant>();
     const [message, setMessage] = useState<string>("City added");
+    const { lng } = useLocalisation();
     const dispatch = useDispatch<AppDispatch>();
 
     const handleChange = (value: string) => {
@@ -26,8 +28,8 @@ export const useWeatherSearch = () => {
             return;
         };
 
-        dispatch(getCurrentWeather({ city: inputValue }));
-        dispatch(getForecast({ city: inputValue }));
+        dispatch(getCurrentWeather({ city: inputValue, lng }));
+        dispatch(getForecast({ city: inputValue, lng }));
         setInputValue("");
         setNType("success");
         setMessage("City founded")
