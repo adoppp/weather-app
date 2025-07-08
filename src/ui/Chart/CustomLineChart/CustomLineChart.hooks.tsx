@@ -19,7 +19,6 @@ export const useCustomLineChart = () => {
     const { theme } = useTheme();
 
     const CustomLabel: FC = ({ x, y, value }: LabelProps) => {
-        //if i want to customize y axis
         const yCoord =
             typeof y === 'number'
                 ? y
@@ -44,10 +43,10 @@ export const useCustomLineChart = () => {
     const CustomTooltip: FC<CustomTooltipProps> = ({ active, payload, label }) => {
         if (active && payload && payload.length) {
             return (
-                <div style={{ backgroundColor: '#0B131E', border: '1px solid #fff', borderRadius: "15px", padding: "12px" }}>
-                    <p style={{marginBottom: "4px"}}><strong>{label}</strong></p>
+                <div style={{ backgroundColor: theme === "light" ? "#ee7a47" : "#1f77b4", border: '1px solid #fff', borderRadius: "15px", padding: "12px" }}>
+                    <p style={{marginBottom: "4px", color: theme === "light" ? "#7d481b" : "#202B3B"}}><strong>{label}</strong></p>
                     {payload.map((entry, index) => (
-                        <p key={`item-${index}`} style={{ color: entry.color }}>
+                        <p key={`item-${index}`} style={{ color: "#fffdf6" }}>
                             {entry.name}: {entry.value}°
                         </p>
                     ))}
