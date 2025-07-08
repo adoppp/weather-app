@@ -13,7 +13,6 @@ const weatherSlice = createSlice({
     initialState,
     reducers: {
         setLayer: (state, action) => {
-            console.log(action)
             state.layer = action.payload;
         }
     },
