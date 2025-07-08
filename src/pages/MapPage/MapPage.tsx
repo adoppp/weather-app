@@ -1,6 +1,6 @@
 import { WeatherMap } from "@/components/WeatherMap/WeatherMap";
 import { Select } from "@/ui/Select/Select";
-import { useMapPage } from "./MapPage.hooks";
+import { useMapPage } from "@pages/MapPage/MapPage.hooks";
 
 const MapPage = () => {
     const { layer, mapOptions, handleMap, loadingOrError } = useMapPage();

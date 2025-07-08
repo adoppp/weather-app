@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { useSelector } from "react-redux";
-import { isRouteErrorResponse, useNavigate, useRouteError } from "react-router-dom";
+import { isRouteErrorResponse, useRouteError } from "react-router-dom";
 
 import { errorSelector } from "@/store/selectors/errorSelector";
 
@@ -18,7 +18,6 @@ export const useErrorPage = () => {
     const [hookError, setHookError] = useState<ErrorStateTypes>(defaultError);
     const routeError = useRouteError();
     const reduxError = useSelector(errorSelector);
-    const navigate = useNavigate();
 
     useEffect(() => {
         if (isRouteErrorResponse(routeError)) {

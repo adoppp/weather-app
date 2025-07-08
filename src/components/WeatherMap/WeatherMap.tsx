@@ -1,4 +1,6 @@
 import { type FC } from "react";
+import "@utils/leafletIconFix/leafletIconFix";
+import 'leaflet/dist/leaflet.css';
 import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
 import classNames from "classnames/bind";
 
