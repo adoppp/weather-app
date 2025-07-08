@@ -43,7 +43,7 @@ export const useCustomLineChart = () => {
     const CustomTooltip: FC<CustomTooltipProps> = ({ active, payload, label }) => {
         if (active && payload && payload.length) {
             return (
-                <div style={{ backgroundColor: theme === "light" ? "#ee7a47" : "#1f77b4", border: '1px solid #fff', borderRadius: "15px", padding: "12px" }}>
+                <div style={{ backgroundColor: theme === "light" ? "rgb(238, 122, 71, 0.7)" : "rgb(31, 119, 180, 0.7)", border: `1px solid ${theme === "light" ? "#7d481b" : "#fffdf6"}`, borderRadius: "15px", padding: "12px" }}>
                     <p style={{marginBottom: "4px", color: theme === "light" ? "#7d481b" : "#202B3B"}}><strong>{label}</strong></p>
                     {payload.map((entry, index) => (
                         <p key={`item-${index}`} style={{ color: "#fffdf6" }}>
