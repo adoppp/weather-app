@@ -7,7 +7,7 @@ import styles from "@/components/CitiesList/CitiesList.module.scss";
 import { citiesSelector } from "@/store/selectors/citiesSelector";
 import type { AppDispatch } from "@/store/store";
 import { deleteCity } from "@/store/reducers/citiesSlice";
-import { TrashIcon } from "@assets/svg";
+import { LocationIcon, TrashIcon } from "@assets/svg";
 import { useState } from "react";
 import { ModalContainer } from "@components/ModalContainer/ModalContainer";
 import { Button } from "@/ui/Button/Button";
@@ -39,19 +39,25 @@ export const useCitiesList = () => {
         setIsOpen(false)
     };
 
-    const goToWeather = (city: string) => {
-        navigate(`/weather-app/weather`, { state: { city } });
+    const goToWeather = (city: string, index: boolean, coords: { lat: number | null, lon: number | null }) => {
+        navigate(`/weather-app/weather`, { state: { city, coords, index } });
     };
 
     const listItem = cities.map((item, index) => {
         return (
             <li key={index}>
-                <p onClick={() => goToWeather(item)}>
-                    {item}
+                <p onClick={() => goToWeather(item.city, item.index, item.coords! )}>
+                    {item.city}
                 </p>
-                <Button type="svg" onClick={() => handleOpenModal(item)}>
-                    {TrashIcon}
-                </Button>
+                <div className={cn("geo")}>
+                    {item.index && LocationIcon}
+                </div>
+                {
+                    !item.index && 
+                    <Button type="svg" onClick={() => handleOpenModal(item.city)}>
+                        {TrashIcon}
+                    </Button>
+                }
             </li>
         )
     });

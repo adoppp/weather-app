@@ -15,7 +15,7 @@ export const WeatherMap: FC = () => {
         <>
             {
                 weather && 
-                <MapContainer center={[weather?.coord.lat as number,  weather?.coord.lon as number]} zoom={6} scrollWheelZoom={false} className={cn("container_map")}>
+                <MapContainer center={[weather?.coord.lat as number,  weather?.coord.lon as number]} zoom={9} scrollWheelZoom={false} className={cn("container_map")}>
                     <TileLayer
                         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                         attribution='&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors'
@@ -28,7 +28,7 @@ export const WeatherMap: FC = () => {
 
                     <Marker position={[weather?.coord.lat as number,  weather?.coord.lon as number]}>
                         <Popup>
-                        {language.map.loc}
+                            {language.map.loc}
                         </Popup>
                     </Marker>
                 </MapContainer> 

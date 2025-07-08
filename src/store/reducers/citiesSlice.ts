@@ -1,7 +1,7 @@
 import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
 
 interface CityState {
-    data: string[];
+    data: { city: string, coords?: { lat: number | null, lon: number | null} | null, index: boolean }[];
 }
 
 const initialState: CityState = {
@@ -12,15 +12,22 @@ const citiesSlice = createSlice({
     name: "city",
     initialState,
     reducers: {
-        addCity(state, action: PayloadAction<string>) {
-            const exists = state.data.some(city => city === action.payload);
+        addCity(state, action: PayloadAction<{ city: string, coords?: { lat: number, lon: number}, index: boolean}>) {
+            const exists = state.data.some(item => item.city === action.payload.city);
             
             if (!exists) {
-                state.data.push(action.payload.charAt(0).toLocaleUpperCase() + action.payload.slice(1));
+                state.data.push({ 
+                    city: action.payload.city.charAt(0).toLocaleUpperCase() + action.payload.city.slice(1), 
+                    coords: { 
+                        lat: action.payload.coords?.lat || null, 
+                        lon: action.payload.coords?.lon || null
+                    },
+                    index: action.payload.index 
+                });
             }
         },
         deleteCity(state, action: PayloadAction<string>) {
-            const filtered = state.data.filter(city => city !== action.payload);
+            const filtered = state.data.filter(item => item.city !== action.payload);
             state.data = filtered;
         }
     }

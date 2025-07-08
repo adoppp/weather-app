@@ -33,7 +33,7 @@ export const useCitiesAdd = () => {
             return;
         }
         
-        const exists = cities.some(city => city === (inputValue.charAt(0).toUpperCase() + inputValue.slice(1)));
+        const exists = cities.some(item => item.city === (inputValue.charAt(0).toUpperCase() + inputValue.slice(1)));
             
         if (exists) {
             setNType("warning");
@@ -42,7 +42,7 @@ export const useCitiesAdd = () => {
             return;
         }
 
-        dispatch(addCity(inputValue))
+        dispatch(addCity({ city: inputValue, index: false}))
         setInputValue("");
         setNType("success");
         setMessage("City added")
