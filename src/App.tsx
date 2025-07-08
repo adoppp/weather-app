@@ -9,7 +9,6 @@ import styles from "@/App.module.scss";
 import { Navigation } from "@/components/Navigation/Navigation";
 import { useApp } from "@/App.hooks";
 import { Loader } from "@/components/Loader/Loader";
-import { ErrorBoundary } from "@/components/ErrorBoundary/ErrorBoundary";
 import { Button } from "@/ui/Button/Button";
 import { BurgerIcon, CloseIcon } from "@/assets/svg";
 
