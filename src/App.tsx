@@ -37,11 +37,9 @@ export function App() {
             </aside>
 
             <main>
-                <ErrorBoundary>
-                    <Suspense fallback={<Loader />}>    
-                        <Outlet />
-                    </Suspense>
-                </ErrorBoundary>
+                <Suspense fallback={<Loader />}>    
+                    <Outlet />
+                </Suspense>
             </main>
         </div>
     );

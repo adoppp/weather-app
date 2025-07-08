@@ -4,6 +4,7 @@ import classNames from "classnames/bind";
 import styles from "@pages/ErrorPage/ErrorPage.module.scss";
 
 import { useErrorPage } from "./ErrorPage.hooks";
+import { Button } from "@/ui/Button/Button";
 
 const cn = classNames.bind(styles);
 
@@ -15,7 +16,7 @@ interface ErrorPageProps {
 };
 
 export const ErrorPage: FC<ErrorPageProps> = ({ propError }) => {
-    const { hookError} = useErrorPage();
+    const { hookError } = useErrorPage();
     const error = propError || hookError;
 
 

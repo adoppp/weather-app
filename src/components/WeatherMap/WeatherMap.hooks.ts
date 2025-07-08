@@ -21,17 +21,15 @@ export const useWeatherMap = () => {
 
     useEffect(() => {
         if(!weather) {
-            if (location && typeof location === "object") {
-                dispatch(getCurrentWeather({ cords: { lat: location.lat, lon: location.lon }, lng }));
-                dispatch(getForecast({ cords: { lat: location.lat, lon: location.lon }, lng }));
+            if (location && location.coord) {
+                dispatch(getCurrentWeather({ cords: { lat: location.coord.lat, lon: location.coord.lon }, lng }));
+                dispatch(getForecast({ cords: { lat: location.coord.lat, lon: location.coord.lon }, lng }));
                 return;
-            } else if (typeof location === "string" && location !== "") {
-                dispatch(getCurrentWeather({ city: location, lng }));
-                dispatch(getForecast({ city: location, lng }));
-                return;
+            } else if (location && location.error) {
+                throw new Error("Choose city or turn on geo and rerload");
             }
         }
-    }, [])
+    }, []);
     
     return { API_KEY, layer, weather, language }
-}
+};

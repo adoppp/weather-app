@@ -3,6 +3,7 @@ import { createBrowserRouter, Navigate } from "react-router-dom";
 import { App } from "@/App";
 import { ErrorPage } from "@/pages/ErrorPage/ErrorPage";
 import { NotFoundPage } from "@/pages/NotFoundPage/NotFoundPage";
+import { ErrorBoundaryWrapper } from "@/components/ErrorBoundaryWrapper/ErrorBoundaryWrapper";
 
 const CitiesPage = lazy(() => import("@/pages/CitiesPage/CitiesPage"));
 const SettingsPage = lazy(() => import("@/pages/SettingsPage/SettingsPage"));
@@ -16,12 +17,17 @@ export const router = createBrowserRouter([
         element: <App />,
         errorElement: <ErrorPage />,
         children: [
-            { index: true, element: <Navigate to="weather" replace /> },
-            { path: "weather", element: <WeatherPage /> },
-            { path: "cities", element: <CitiesPage /> },
-            { path: "map", element: <MapPage/>},
-            { path: "settings", element: <SettingsPage /> },
-            { path: "*", element: <NotFoundPage /> },
+            {
+                element: <ErrorBoundaryWrapper />,
+                children: [
+                    { index: true, element: <Navigate to="weather" replace /> },
+                    { path: "weather", element: <WeatherPage /> },
+                    { path: "cities", element: <CitiesPage /> },
+                    { path: "map", element: <MapPage /> },
+                    { path: "settings", element: <SettingsPage /> },
+                    { path: "*", element: <NotFoundPage /> },
+                ],
+            },
         ],
     },
 ]);

@@ -1,6 +1,9 @@
 import { createContext, useContext, useState, useEffect, type ReactNode, type FC } from "react";
 
-type CityContextType = string | { lat: number; lon: number } | null;
+type CityContextType = {
+    coord: { lat: number; lon: number } | null,
+    error: { cod: number, message: string } | null
+}| null;
 
 const CityContext = createContext<CityContextType>(null);
 
@@ -17,14 +20,15 @@ export const CityProvider: FC<CityProviderProps> = ({ children }) => {
         navigator.geolocation.getCurrentPosition(
             (position) => {
                 setCity({
-                    lat: position.coords.latitude,
-                    lon: position.coords.longitude,
+                    coord: {
+                        lat: position.coords.latitude,
+                        lon: position.coords.longitude,
+                    },
+                    error: null
                 });
             },
             (error) => {
-                console.warn("Geolocation error:", error);
-                
-                setCity("");
+                setCity({  coord: null,  error: { cod: error.code, message: error.message}  });
             }
         );
     }, []);
