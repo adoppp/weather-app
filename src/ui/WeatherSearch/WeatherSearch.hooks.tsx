@@ -1,6 +1,6 @@
 import { useState, type FormEvent } from "react";
 import { useDispatch } from "react-redux";
-import type { AppDispatch } from "@/store/store";
+import type { AppDispatch } from "@/store";
 import { getCurrentWeather, getForecast } from "@/store/operations/weatherThunk";
 import type { NotifyVariant } from "@/components/ModalContainer/ModalContainer.types";
 import { ModalContainer } from "@/components/ModalContainer/ModalContainer";

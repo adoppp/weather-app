@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 import { mapSelector, weatherSelector } from "@/store/selectors/weatherSelector";
 import { useGetLocation } from "@/utils/useGetLocation/useGetLocation";
-import type { AppDispatch } from "@/store/store";
+import type { AppDispatch } from "@/store";
 import { getCurrentWeather, getForecast } from "@/store/operations/weatherThunk";
 import { useLocalisation } from "@/utils/useLocalisation/useLocalisation";
 import localisation from "@/data/lng/localisation.json";

@@ -5,7 +5,7 @@ import classNames from "classnames/bind";
 import styles from "@/components/CitiesList/CitiesList.module.scss";
 
 import { citiesSelector } from "@/store/selectors/citiesSelector";
-import type { AppDispatch } from "@/store/store";
+import type { AppDispatch } from "@/store";
 import { deleteCity } from "@/store/reducers/citiesSlice";
 import { LocationIcon, TrashIcon } from "@assets/svg";
 import { useState } from "react";

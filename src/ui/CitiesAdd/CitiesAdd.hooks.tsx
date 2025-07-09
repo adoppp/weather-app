@@ -1,7 +1,7 @@
 import { useState, type FormEvent } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-import type { AppDispatch } from "@/store/store";
+import type { AppDispatch } from "@/store";
 import { addCity } from "@/store/reducers/citiesSlice";
 import { citiesSelector } from "@/store/selectors/citiesSelector";
 import { ModalContainer } from "@/components/ModalContainer/ModalContainer";

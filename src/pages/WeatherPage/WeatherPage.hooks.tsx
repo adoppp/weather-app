@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { useLocation } from "react-router";
 
-import type { AppDispatch } from "@/store/store";
+import type { AppDispatch } from "@/store";
 import { getCurrentWeather, getForecast } from "@/store/operations/weatherThunk";
 import { useGetLocation } from "@/utils/useGetLocation/useGetLocation";
 import { useSelector } from "react-redux";
