@@ -1,23 +1,22 @@
 import type { ChangeEvent } from "react";
-import { useDispatch, useSelector } from "react-redux";
 
 import { mapSelector } from "@/store/selectors/weatherSelector";
 import { setLayer } from "@/store/reducers/weatherSlice";
-import type { AppDispatch } from "@/store/store";
 import { useLocalisation } from "@/utils/useLocalisation/useLocalisation";
 import localisation from "@/data/lng/localisation.json";
 import { loaderSelector } from "@/store/selectors/loaderSelector";
 import { errorSelector } from "@/store/selectors/errorSelector";
 import { Loader } from "@/components/Loader/Loader";
 import { ErrorPage } from "../ErrorPage/ErrorPage";
+import { useAppDispatch, useAppSelector } from "@/store/redux.hooks";
 
 export const useMapPage = () => {
     const { lng } = useLocalisation();
     const language = localisation[lng].map;
-    const layer = useSelector(mapSelector);
-    const isLoading = useSelector(loaderSelector);
-    const error = useSelector(errorSelector);
-    const dispatch = useDispatch<AppDispatch>();
+    const layer = useAppSelector(mapSelector);
+    const isLoading = useAppSelector(loaderSelector);
+    const error = useAppSelector(errorSelector);
+    const dispatch = useAppDispatch();
 
     const mapOptions = [
         { oValue: "temp_new", label: language.temp },

@@ -1,16 +1,15 @@
-import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import classNames from "classnames/bind";
 
 import styles from "@/components/CitiesList/CitiesList.module.scss";
 
 import { citiesSelector } from "@/store/selectors/citiesSelector";
-import type { AppDispatch } from "@/store/store";
 import { deleteCity } from "@/store/reducers/citiesSlice";
 import { LocationIcon, TrashIcon } from "@assets/svg";
 import { useState } from "react";
 import { ModalContainer } from "@components/ModalContainer/ModalContainer";
 import { Button } from "@/ui/Button/Button";
+import { useAppDispatch, useAppSelector } from "@/store/redux.hooks";
 
 const cn = classNames.bind(styles);
 
@@ -19,8 +18,8 @@ export const useCitiesList = () => {
     const [isNotify, setIsNotify] = useState<boolean>(false);
     const [city, setCity] = useState<string>("");
     const navigate = useNavigate();
-    const cities = useSelector(citiesSelector);
-    const dispatch = useDispatch<AppDispatch>();
+    const cities = useAppSelector(citiesSelector);
+    const dispatch = useAppDispatch();
 
     const handleClick = () => {
         dispatch(deleteCity(city));

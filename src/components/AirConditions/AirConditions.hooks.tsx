@@ -1,14 +1,12 @@
-import { useSelector } from "react-redux";
-
 import { TempLowIcon, TempUnderMidIcon, TempMidIcon, TempHighIcon } from "@/assets/svg";
-
 import { weatherSelector } from "@/store/selectors/weatherSelector";
 import { useTruncNumber } from "@/utils/useTruncNumber/useTruncNumber";
 import { useLocalisation } from "@/utils/useLocalisation/useLocalisation";
 import localisation from "@/data/lng/localisation.json";
+import { useAppSelector } from "@/store/redux.hooks";
 
 export const useAirConditions = () => {
-    const currentWeatherData = useSelector(weatherSelector);
+    const currentWeatherData = useAppSelector(weatherSelector);
     const { lng } = useLocalisation();
     const language = localisation[lng];
 
