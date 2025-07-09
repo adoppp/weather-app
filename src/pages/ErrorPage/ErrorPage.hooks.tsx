@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react"
-import { useSelector } from "react-redux";
 import { isRouteErrorResponse, useRouteError } from "react-router-dom";
 
 import { errorSelector } from "@/store/selectors/errorSelector";
+import { useAppSelector } from "@/store/redux.hooks";
 
 type ErrorStateTypes = {
     title: string | number,
@@ -17,7 +17,7 @@ const defaultError = {
 export const useErrorPage = () => {
     const [hookError, setHookError] = useState<ErrorStateTypes>(defaultError);
     const routeError = useRouteError();
-    const reduxError = useSelector(errorSelector);
+    const reduxError = useAppSelector(errorSelector);
 
     useEffect(() => {
         if (isRouteErrorResponse(routeError)) {

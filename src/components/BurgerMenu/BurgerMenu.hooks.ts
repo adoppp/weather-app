@@ -2,7 +2,7 @@ import { useTheme } from "@/utils/useTheme/useTheme";
 import { useLocalisation } from "@/utils/useLocalisation/useLocalisation";
 import { useEffect, useRef, useState } from "react";
 
-export const useApp = () => {
+export const useBugerMenu = () => {
     const { } = useLocalisation();
     const { } = useTheme();
     const [ isHide, setIsHide ] = useState<boolean>(true);

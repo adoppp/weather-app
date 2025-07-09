@@ -1,0 +1,70 @@
+@use "@/styles/colors" as colors;
+@use "@/styles/variables" as variables;
+@use "@/styles/typography" as typography;
+
+.burger_menu {
+    position: absolute;
+    z-index: 1111;
+    top: 0;
+    left: 0;
+    padding-top: 16px;
+    background-color: var(--secondary-bg);
+    max-width: 40vw;
+    width: 100%;
+    height: 100%;
+    border-right: 1px solid var(--svg-active);
+
+    transition: variables.$transition;
+
+    @media screen and (min-width: 768px) {
+        display: none;
+    }
+
+    & .close {
+        margin-left: auto;
+        display: block;
+        margin-bottom: 24px;
+        padding-right: 16px;
+
+        & svg {
+            stroke: var(--text-color);
+            transition: variables.$transition;
+        
+            &:hover {
+                stroke: colors.$gray;
+            }
+        
+            &:active {
+                stroke: var(--svg-active);
+            }
+        }
+    }
+}
+
+.burger_icon {
+    & svg {
+        height: 32px;
+        width: 32px;
+        stroke: var(--text-color);
+        transition: variables.$transition;
+        margin-bottom: 8px;
+    
+        &:hover {
+            stroke: colors.$gray;
+        }
+    
+        &:active {
+            stroke: var(--svg-active);
+        }
+    }
+
+    @media screen and (min-width: 769px) {
+        & {
+            display: none;
+        }
+    }
+}
+
+.burger_hide {
+    transform: translateX(-100%);
+}

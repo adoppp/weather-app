@@ -1,13 +1,13 @@
 import { useMemo } from "react";
-import { useSelector } from "react-redux";
 
 import { forecastSelector } from "@/store/selectors/weatherSelector";
 import { useTruncNumber } from "@/utils/useTruncNumber/useTruncNumber";
 import { useLocalisation } from "@/utils/useLocalisation/useLocalisation";
 import localisation from "@/data/lng/localisation.json";
+import { useAppSelector } from "@/store/redux.hooks";
 
 export const useForecastCardHooks = () => {
-    const forecastData = useSelector(forecastSelector);
+    const forecastData = useAppSelector(forecastSelector);
     const { lng } = useLocalisation();
     const language = localisation[lng];
 

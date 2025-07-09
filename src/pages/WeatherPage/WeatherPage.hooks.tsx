@@ -1,8 +1,6 @@
 import { useEffect } from "react";
-import { useDispatch } from "react-redux";
 import { useLocation } from "react-router";
 
-import type { AppDispatch } from "@/store";
 import { getCurrentWeather, getForecast } from "@/store/operations/weatherThunk";
 import { useGetLocation } from "@/utils/useGetLocation/useGetLocation";
 import { useSelector } from "react-redux";
@@ -13,6 +11,7 @@ import { ErrorPage } from "@/pages/ErrorPage/ErrorPage";
 import { useLocalisation } from "@/utils/useLocalisation/useLocalisation";
 import { weatherSelector } from "@/store/selectors/weatherSelector";
 import { addCity } from "@/store/reducers/citiesSlice";
+import { useAppDispatch } from "@/store/redux.hooks";
 
 export const useWeatherPage = () => {
     const location = useGetLocation();
@@ -21,7 +20,7 @@ export const useWeatherPage = () => {
     const isLoading = useSelector(loaderSelector);
     const error = useSelector(errorSelector);
     const { lng } = useLocalisation();
-    const dispatch = useDispatch<AppDispatch>();
+    const dispatch = useAppDispatch();
 
     useEffect(() => {
         const fromState = routerLocation.state as {
