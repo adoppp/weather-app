@@ -29,7 +29,7 @@ const errorSlice = createSlice({
                 getCurrentWeather.pending,
                 getForecast.pending
             ),
-            resetError,
+            setError,
         )
         .addMatcher(
             isAnyOf(
@@ -38,7 +38,7 @@ const errorSlice = createSlice({
                 getForecast.fulfilled,
                 getForecast.rejected
             ),
-            setError,
+            resetError,
         )
     },
 })
