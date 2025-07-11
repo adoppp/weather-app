@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit"
+import { createSlice, isAnyOf } from "@reduxjs/toolkit"
 
 import { getCurrentWeather, getForecast } from "@store/operations/weatherThunk";
 
@@ -24,12 +24,22 @@ const errorSlice = createSlice({
     initialState,
     reducers: {},
     extraReducers(builder) {
-        builder.addCase(getCurrentWeather.pending, resetError)
-        .addCase(getCurrentWeather.fulfilled, resetError)
-        .addCase(getCurrentWeather.rejected, setError)
-        .addCase(getForecast.pending, resetError)
-        .addCase(getForecast.fulfilled, resetError)
-        .addCase(getForecast.rejected, setError)
+        builder.addMatcher(
+            isAnyOf(
+                getCurrentWeather.pending,
+                getForecast.pending
+            ),
+            resetError,
+        )
+        .addMatcher(
+            isAnyOf(
+                getCurrentWeather.fulfilled,
+                getCurrentWeather.rejected,
+                getForecast.fulfilled,
+                getForecast.rejected
+            ),
+            setError,
+        )
     },
 })
 

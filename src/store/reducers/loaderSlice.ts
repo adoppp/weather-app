@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, isAnyOf } from "@reduxjs/toolkit";
 
 import { getCurrentWeather, getForecast } from "@store/operations/weatherThunk";
 
@@ -19,12 +19,22 @@ const loaderSlice = createSlice({
     initialState,
     reducers: {},
     extraReducers(builder) {
-        builder.addCase(getCurrentWeather.pending, setLoaderTrue)
-        .addCase(getCurrentWeather.fulfilled, setLoaderFalse)
-        .addCase(getCurrentWeather.rejected, setLoaderFalse)
-        .addCase(getForecast.pending, setLoaderTrue)
-        .addCase(getForecast.fulfilled, setLoaderFalse)
-        .addCase(getForecast.rejected, setLoaderFalse)
+        builder.addMatcher(
+            isAnyOf(
+                getCurrentWeather.pending,
+                getForecast.pending
+            ),
+            setLoaderTrue,
+        )
+        .addMatcher(
+            isAnyOf(
+                getCurrentWeather.fulfilled,
+                getCurrentWeather.rejected,
+                getForecast.fulfilled,
+                getForecast.rejected
+            ),
+            setLoaderFalse,
+        )
     },
 });
 
