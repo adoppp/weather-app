@@ -20,40 +20,49 @@ export const CityProvider: FC<CityProviderProps> = ({ children }) => {
     const API_KEY = import.meta.env.VITE_API_KEY;
 
     const getCityByCoordinates = async (lat: number, lon: number) => {
-        try {
-            const response = await axios.get(`https://api.openweathermap.org/geo/1.0/reverse?lat=${lat}&lon=${lon}&limit=1&appid=${API_KEY}`);
-            const data = response.data[0];
+        const response = await axios.get(`https://api.openweathermap.org/geo/1.0/reverse?lat=${lat}&lon=${lon}&limit=1&appid=${API_KEY}`);
+        const data = response.data[0];
 
-            if (!data) throw new Error("City not found")
-
-            return { city: data.name, lat: data.lat, lon: data.lon};
-        } catch (error) {
-            console.error(error);
-            return null;
+        if (!data) {
+            const error = new Error("City not found");
+            error.name = "Oops...";
+            throw error;
         }
+
+        return { city: data.name, lat: data.lat, lon: data.lon};
     };
 
     useEffect(() => {
     const fetchGeo = async () => {
         navigator.geolocation.getCurrentPosition(
             async (position) => {
-                const { latitude, longitude } = position.coords;
-                const cityData = await getCityByCoordinates(latitude, longitude);
+                try {
+                    const { latitude, longitude } = position.coords;
+                    const cityData = await getCityByCoordinates(latitude, longitude);
+    
+                    setCity({
+                        coord: {
+                            lat: latitude,
+                            lon: longitude,
+                        },
+                        error: null,
+                        city: { 
+                            name: cityData?.city, 
+                            coords: { 
+                                lat: cityData?.lat, 
+                                lon: cityData?.lon 
+                            }
+                        },
+                    });
+                } catch (error) {
+                    const errorMessage = error instanceof Error ? error.message : "Unknown error";
 
-                setCity({
-                    coord: {
-                        lat: latitude,
-                        lon: longitude,
-                    },
-                    error: null,
-                    city: { 
-                        name: cityData?.city, 
-                        coords: { 
-                            lat: cityData?.lat, 
-                            lon: cityData?.lon 
-                        }
-                    },
-                });
+                    setCity({
+                    coord: null,
+                    error: { cod: 500, message: errorMessage },
+                    city: null,
+            });
+                }
             },
             (error) => {
                 setCity({

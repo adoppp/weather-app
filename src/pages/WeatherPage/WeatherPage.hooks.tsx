@@ -45,7 +45,9 @@ export const useWeatherPage = () => {
             dispatch(addCity({ city: location.city?.name!, coords: { lat: location.coord.lat, lon: location.coord.lon}, index: true }));
             return;
         } else if (location && location.error) {
-            throw new Error("Choose city or turn on geo and rerload");
+            const error = new Error("Choose city or turn on geo and rerload");
+            error.name = "Please";
+            throw error;
         }
 
     }, [location, routerLocation.state, dispatch, lng]);
