@@ -1,5 +1,5 @@
-import { CitiesList } from "@/components/CitiesList/CitiesList";
-import { CitiesAdd } from "@/ui/CitiesAdd/CitiesAdd";
+import { CitiesList } from "@/sections/cities/CitiesList/CitiesList";
+import { CitiesAdd } from "@sections/cities/CitiesAdd/CitiesAdd";
 import type { FC } from "react";
 
 const CitiesPage: FC = () => {

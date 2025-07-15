@@ -1,6 +1,6 @@
 import { lazy } from "react";
 import { createBrowserRouter, Navigate } from "react-router-dom";
-import { App } from "@/App";
+import { App } from "@/App/App";
 import { ErrorPage } from "@/pages/ErrorPage/ErrorPage";
 import { NotFoundPage } from "@/pages/NotFoundPage/NotFoundPage";
 import { ErrorBoundaryWrapper } from "@/components/ErrorBoundaryWrapper/ErrorBoundaryWrapper";

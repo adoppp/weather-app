@@ -3,11 +3,11 @@ import classNames from "classnames/bind";
 
 import styles from "@/pages/WeatherPage/WeatherPage.module.scss";
 
-import { CurrentWeatherCard } from "@/components/CurrentWeatherCard/CurrentWeatherCard";
-import { AirConditions } from "@/components/AirConditions/AirConditions";
-import { ForecastCard } from "@/components/ForecastCard/ForecastCard";
+import { CurrentWeatherCard } from "@/sections/weather/CurrentWeatherCard/CurrentWeatherCard";
+import { AirConditions } from "@/sections/weather/AirConditions/AirConditions";
+import { ForecastCard } from "@/sections/weather/ForecastCard/ForecastCard";
 import { useWeatherPage } from "@/pages/WeatherPage/WeatherPage.hooks";
-import { WeatherSearch } from "@/ui/WeatherSearch/WeatherSearch";
+import { WeatherSearch } from "@/sections/weather/WeatherSearch/WeatherSearch";
 
 const cn = classNames.bind(styles);
 

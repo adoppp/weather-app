@@ -1,4 +1,4 @@
-import { WeatherMap } from "@/components/WeatherMap/WeatherMap";
+import { WeatherMap } from "@/sections/map/WeatherMap/WeatherMap";
 import { Select } from "@/ui/Select/Select";
 import { useMapPage } from "@pages/MapPage/MapPage.hooks";
 
