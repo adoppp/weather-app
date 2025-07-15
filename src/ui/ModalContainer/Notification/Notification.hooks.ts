@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import type { NotifyVariant } from "@components/ModalContainer/ModalContainer.types";
+import type { NotifyVariant } from "@ui/ModalContainer/ModalContainer.types";
 
 interface NotificationProps {
     handleClose: () => void
