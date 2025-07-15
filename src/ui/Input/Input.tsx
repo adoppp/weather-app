@@ -13,5 +13,5 @@ interface InputProps {
 const cn = classNames.bind(styles);
 
 export const Input: FC<InputProps> = ({ label, value, onChange, required }) => {
-    return <input placeholder={label} value={value} onChange={(e) => onChange(e.target.value)} className={cn("input")} required={required}  />
+    return <input type="text" placeholder={label} value={value} onChange={(e) => onChange(e.target.value)} className={cn("input")} required={required}  />
 };
