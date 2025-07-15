@@ -15,5 +15,5 @@ interface ModalContainerProps {
 export const ModalContainer: FC<ModalContainerProps> = ({ children, setIsOpen, type, time = 5000, notifyType }) => {
     const { ModalType } = useModalContainer({ setIsOpen, children, time, notifyType });
 
-    return createPortal(<ModalType type={type} />, document.getElementById("modal")!);
+    return createPortal(<ModalType type={type} />, document.body);
 };
